@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Form Title</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add additional styles if needed */
+    body {
+      padding: 20px;
+    }
+
+    /* Adjust the form width for larger screens */
+    @media (min-width: 768px) {
+      .form-horizontal {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<form class="form-horizontal" method="post" >
+    <fieldset>
+
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="keluhan">Keluhan</label>
+  <div class="col-md-8">
+    <input id="keluhan" name="keluhan" type="text" placeholder="" class="form-control" required="">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="riwayatdahulu">Riwayat Penyakit Dahulu</label>
+  <div class="col-md-8">
+    <input id="riwayatdahulu" name="riwayatdahulu" type="text" placeholder="" class="form-control" required="">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="riwayatkeluarga">Riwayat Penyakit Keluarga</label>
+  <div class="col-md-8">
+    <input id="riwayatkeluarga" name="riwayatkeluarga" type="text" placeholder="" class="form-control" required="">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="merokok">Merokok</label>
+  <div class="col-md-8">
+    <select id="merokok" name="merokok" class="form-control" required="">
+      <option value="ya">Ya</option>
+      <option value="tidak">Tidak</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="alkohol">Alkohol</label>
+  <div class="col-md-8">
+    <select id="alkohol" name="alkohol" class="form-control" required="">
+      <option value="ya">Ya</option>
+      <option value="tidak">Tidak</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="obat">Obat - obatan</label>
+  <div class="col-md-8">
+    <select id="obat" name="obat" class="form-control" required="">
+      <option value="ya">Ya</option>
+      <option value="tidak">Tidak</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="olahraga">Olahraga</label>
+  <div class="col-md-8">
+    <input id="olahraga" name="olahraga" type="text" placeholder="" class="form-control" required="">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="riwayatalergi">Riwayat Alergi</label>
+  <div class="col-md-8">
+    <select id="riwayatalergi" name="riwayatalergi" class="form-control">
+      <option value="ya">Ya</option>
+      <option value="tidak">Tidak</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-4 col-form-label" for="alergi">Alergi</label>
+  <div class="col-md-8">
+    <input id="alergi" name="alergi" type="text" placeholder="" class="form-control">
+  </div>
+</div>
+
+
+
+</body>
+</html>

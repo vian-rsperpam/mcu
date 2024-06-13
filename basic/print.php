@@ -69,11 +69,11 @@
       font-size: 18px;
       font-weight: bold;
       text-decoration: underline;
-      margin-left: 470px;
+      margin-left: 400px;
     }
     .footer2 {
       font-size: 16px;
-      margin-left: 450px
+      margin-left: 420px
       
     }
 
@@ -281,12 +281,13 @@
   </div>
 </div>
 
+
 <div class="footer">
-dr Anisa Nor Chalifa<br><br><br><br>
+<br><br><br>(dr Anisa Nor Chalifa)
 </div>
 
 <div class="footer2">
-(Dokter penanggung Jawab)
+Penanggung Jawab
 </div>
 
 

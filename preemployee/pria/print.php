@@ -279,11 +279,11 @@
 </div>
 
 <div class="footer">
-dr Anisa Nor Chalifa<br><br><br><br>
+<br><br><br>(dr Anisa Nor Chalifa)
 </div>
 
 <div class="footer2">
-(Dokter penanggung Jawab)
+Penanggung Jawab
 </div>
           
 

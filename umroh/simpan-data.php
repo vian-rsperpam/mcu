@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $paket = $_POST['paket'];
     $usia_tahun = $_POST['usia_tahun'];
     $usia_bulan = $_POST['usia_bulan'];
-    $keluhan = $_POST['keluhan'];
+    $keluhan = nl2br($_POST['keluhan']);
     $riwayatdahulu = $_POST['riwayatdahulu'];
     $riwayatkeluarga = $_POST['riwayatkeluarga'];
     $merokok = $_POST['merokok'];
@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $perkusi_jantung = $_POST['perkusi'];
     $auskultasi_jantung = $_POST['jantung-auskultasi'];
     $perkusi_pulmo = $_POST['pulmo-perkusi'];
-    $auskultasi_pulmo = $_POST['pulmo-auskultasi'];
+    $auskultasi_pulmo = nl2br($_POST['pulmo-auskultasi']);
     $inspeksi_abdomen = $_POST['inspeksi'];
     $palpalsi_abdomen = $_POST['palpalsi'];
-    $auskultasi_abdomen = $_POST['auskultasi'];
+    $auskultasi_abdomen = nl2br($_POST['auskultasi']);
     $ginjal = $_POST['ginjal'];
-    $ekstremitas_atas = $_POST['ekstremitas-atas'];
-    $ekstremitas_bawah = $_POST['ekstremitas-bawah'];
+    $ekstremitas_atas = nl2br($_POST['ekstremitas-atas']);
+    $ekstremitas_bawah = nl2br($_POST['ekstremitas-bawah']);
     $tumor = $_POST['tumor'];
     $kelainan_kulit = $_POST['kelainan-kulit'];
     $berat_badan = $_POST['berat_badan'];
@@ -77,24 +77,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $glukosa_puasa = $_POST['glukosa-puasa'];
     $glukosa_pp = $_POST['glukosa-pp'];
     $gol_darah = $_POST['gol-darah'];
-    $thorax = $_POST['thorax'];
-    $kesan = $_POST['kesan'];
-    $anjuran = $_POST['anjuran'];
+    $thorax = nl2br($_POST['thorax']);
+    $kesan = nl2br($_POST['kesan']);
+    $anjuran = nl2br($_POST['anjuran']);
 
    
-    $sql = "INSERT INTO umroh   (nama, rm,tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia,
+    $sql = "INSERT INTO umroh   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, riwayatalergi, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
                                 hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, kolesterol, hdl, ldl, trigliserida, 
-            glukosa_puasa, glukosa_pp, gol_darah
+                                glukosa_puasa, glukosa_pp, gol_darah,
                                 thorax, kesan, anjuran)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
-                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olaharag', '$riwayatalergi', '$alergi',
+                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
-            '$glukosa_puasa', '$glukosa_pp', '$gol_darah'
+                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
+                    '$glukosa_puasa', '$glukosa_pp', '$gol_darah',
                     '$thorax','$kesan','$anjuran')";
 
 if ($conn->query($sql) === TRUE) {
@@ -102,7 +102,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.html ");
+    header("Location: /mcu/index.php ");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

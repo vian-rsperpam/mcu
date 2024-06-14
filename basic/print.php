@@ -69,11 +69,13 @@
       font-size: 18px;
       font-weight: bold;
       text-decoration: underline;
-      margin-left: 400px;
+      text-align: left;
+      /* margin-left: 400px; */
     }
     .footer2 {
       font-size: 16px;
-      margin-left: 420px
+      text-align: left;
+      /* margin-left: 420px */
       
     }
 
@@ -148,7 +150,7 @@
             while($row = $result->fetch_assoc()) {
               //anamnesa
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
-              echo "<tr><td><strong>Keluhan :</strong></td><td>" . $row["keluhan"] . "</td></tr>";
+              echo "<tr><td><strong style='font-size: 14px;'>Keluhan :</strong></td><td><pre style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1;'>"  . nl2br($row["keluhan"]) . "</pre></td></tr>";
               echo "<tr><td><strong>Riwayat Penyakit Dahulu :</strong></td><td>" . $row["riwayatdahulu"] . "</td></tr>";
               echo "<tr><td><strong>Riwayat Penyakit Keluarga :</strong></td><td>" . $row["riwayatkeluarga"] . "</td></tr>";
               echo "<tr><td><strong>Riwayat Kebiasaan :</strong></td><td>";
@@ -265,7 +267,7 @@
               echo "<tr><td><strong style='font-size: 14px;'>KESAN :</strong></td><td>"  . $row["kesan"] . "</td></tr>";
 
               //Anjuran
-              echo "<tr><td><strong style='font-size: 14px;'>ANJURAN :</strong></td><td>"  . $row["anjuran"] . "</td></tr>";
+              echo "<tr><td><strong style='font-size: 14px;'>ANJURAN :</strong></td><td><pre style='font-size: 12px; font-family: Arial, sans-serif; line-height: 0.5;'>"  . nl2br($row["anjuran"]) . "</pre></td></tr>";
 
               
             }

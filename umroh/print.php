@@ -8,8 +8,9 @@
   <style>
     header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
+    
     .company-logo {
       display: inline-block;
       width: 50px; /* Sesuaikan lebar logo */
@@ -69,11 +70,13 @@
       font-size: 18px;
       font-weight: bold;
       text-decoration: underline;
-      margin-left: 470px;
+      text-align: left;
+      /* margin-left: 400px; */
     }
     .footer2 {
       font-size: 16px;
-      margin-left: 450px
+      text-align: left;
+      /* margin-left: 420px */
       
     }
   </style>
@@ -103,7 +106,7 @@
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM basic WHERE nama = '$nama'";
+          $sql = "SELECT * FROM umroh WHERE nama = '$nama'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -137,7 +140,7 @@
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM basic WHERE nama = '$nama'";
+          $sql = "SELECT * FROM umroh WHERE nama = '$nama'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -210,15 +213,21 @@
 
                //Abdomen
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ABDOMEN</strong></td></tr>";
-               echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";
-               echo "<tr><td>&emsp;&emsp;<strong>Palpalsi :</strong></td><td>"  . $row["auskultasi_jantung"] . "</td></tr>";
+               echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["inspeksi_abdomen"] . "</td></tr>";
+               echo "<tr><td>&emsp;&emsp;<strong>Palpalsi :</strong></td><td>"  . $row["auskultasi_abdomen"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Auskultasi :</strong></td><td>"  . $row["auskultasi_abdomen"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Ginjal :</strong></td><td>"  . $row["ginjal"] . "</td></tr>";
 
                //Ekstremitas Atas
-               echo "<tr><td><strong style='font-size: 14px;'>EKSTREMITAS ATAS :</strong></td><td>"  . $row["ekstremitas_atas"] . "</td></tr>";
+               echo "<tr>
+               <td style='font-size: 14px; font-weight: bold;'>Ekstremitas Atas:</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["ekstremitas_atas"]) . "</td>
+                   </tr>";
 
-               echo "<tr><td><strong style='font-size: 14px;'>EKSTREMITAS BAWAH :</strong></td><td>"  . $row["ekstremitas_bawah"] . "</td></tr>";
+               echo "<tr>
+               <td style='font-size: 14px; font-weight: bold;'>Ekstremitas Bawah:</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["ekstremitas_bawah"]) . "</td>
+                   </tr>";
 
               //Kulit
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>KULIT</strong></td></tr>";
@@ -268,16 +277,32 @@
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glukosa 2 Jam PP :</strong></td><td>"  . $row["glukosa_pp"] . " mg/dl";
 
               echo "<tr><td>&emsp;&emsp;<strong>c. Golongan Darah :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Golongan Darah :</strong></td><td>"  . $row["gol_darah"] . " mg/dl";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Golongan Darah :</strong></td><td>"  . $row["gol_darah"] . " ";
 
               //thorax
-              echo "<tr><td><strong style='font-size: 14px;'>RONTGEN THORAX :</strong></td><td>"  . $row["thorax"] . "</td></tr>";
+              echo "<tr>
+              <td style='font-size: 14px; font-weight: bold;'>RONTGEN THORAX:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>
+                  </tr>";
 
-              //Kesan
-              echo "<tr><td><strong style='font-size: 14px;'>KESAN :</strong></td><td>"  . $row["kesan"] . "</td></tr>";
+              // Kesan
+              echo "<tr>
+                    <td style='font-size: 14px; font-weight: bold;'>KESAN:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["kesan"]) . "</td>
+                  </tr>";
 
-              //Anjuran
-              echo "<tr><td><strong style='font-size: 14px;'>ANJURAN :</strong></td><td>"  . $row["anjuran"] . "</td></tr>";
+              // Anjuran
+              echo "<tr>
+                    <td style='font-size: 14px; font-weight: bold;'>ANJURAN:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
+                  </tr>";
+                  
+
+
+              
+
+
+
 
 
             }

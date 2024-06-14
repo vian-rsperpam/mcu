@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $paket = $_POST['paket'];
     $usia_tahun = $_POST['usia_tahun'];
     $usia_bulan = $_POST['usia_bulan'];
-    $keluhan = $_POST['keluhan'];
+    $keluhan = nl2br($_POST['keluhan']);
     $riwayatdahulu = $_POST['riwayatdahulu'];
     $riwayatkeluarga = $_POST['riwayatkeluarga'];
     $merokok = $_POST['merokok'];
@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $perkusi_jantung = $_POST['perkusi'];
     $auskultasi_jantung = $_POST['jantung-auskultasi'];
     $perkusi_pulmo = $_POST['pulmo-perkusi'];
-    $auskultasi_pulmo = $_POST['pulmo-auskultasi'];
+    $auskultasi_pulmo = nl2br($_POST['pulmo-auskultasi']);
     $inspeksi_abdomen = $_POST['inspeksi'];
     $palpalsi_abdomen = $_POST['palpalsi'];
-    $auskultasi_abdomen = $_POST['auskultasi'];
+    $auskultasi_abdomen = nl2br($_POST['auskultasi']);
     $ginjal = $_POST['ginjal'];
-    $ekstremitas_atas = $_POST['ekstremitas-atas'];
-    $ekstremitas_bawah = $_POST['ekstremitas-bawah'];
+    $ekstremitas_atas = nl2br($_POST['ekstremitas-atas']);
+    $ekstremitas_bawah = nl2br($_POST['ekstremitas-bawah']);
     $tumor = $_POST['tumor'];
     $kelainan_kulit = $_POST['kelainan-kulit'];
     $berat_badan = $_POST['berat_badan'];

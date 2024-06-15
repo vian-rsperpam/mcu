@@ -147,7 +147,10 @@
             while($row = $result->fetch_assoc()) {
               //anamnesa
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
-              echo "<tr><td><strong style='font-size: 14px;'>Keluhan :</strong></td><td><pre style='font-size: 12px; font-family: Arial, sans-serif; line-height: 0.5;'>"  . nl2br($row["keluhan"]) . "</pre></td></tr>";
+              echo "<tr>
+               <td style='font-size: 14px; font-weight: bold;'>Keluhan :</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["keluhan"]) . "</td>
+                   </tr>";
               echo "<tr><td><strong>Riwayat Penyakit Dahulu :</strong></td><td>" . $row["riwayatdahulu"] . "</td></tr>";
              echo "<tr>
                <td style='font-size: 14px; font-weight: bold;'>Riwayat Penyakit Keluarga :</td>
@@ -236,19 +239,19 @@
               // echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGPT :</strong></td><td>"  . $row["sgpt"] . " mg/dl";
               // //thorax
-              // echo "<tr>
+              echo "<tr>
               <td style='font-size: 14px; font-weight: bold;'>RONTGEN THORAX:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>
                   </tr>";
 
               // //Kesan
-              //echo "<tr>
+              echo "<tr>
                     <td style='font-size: 14px; font-weight: bold;'>KESAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["kesan"]) . "</td>
                   </tr>";
 
               // //Anjuran
-              //echo "<tr>
+              echo "<tr>
                     <td style='font-size: 14px; font-weight: bold;'>ANJURAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
                   </tr>";

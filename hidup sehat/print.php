@@ -149,14 +149,20 @@
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
               echo "<tr><td><strong style='font-size: 14px;'>Keluhan :</strong></td><td><pre style='font-size: 12px; font-family: Arial, sans-serif; line-height: 0.5;'>"  . nl2br($row["keluhan"]) . "</pre></td></tr>";
               echo "<tr><td><strong>Riwayat Penyakit Dahulu :</strong></td><td>" . $row["riwayatdahulu"] . "</td></tr>";
-              echo "<tr><td><strong>Riwayat Penyakit Keluarga :</strong></td><td>" . $row["riwayatkeluarga"] . "</td></tr>";
+             echo "<tr>
+               <td style='font-size: 14px; font-weight: bold;'>Riwayat Penyakit Keluarga :</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["riwayatkeluarga"]) . "</td>
+                   </tr>";
               echo "<tr><td><strong>Riwayat Kebiasaan :</strong></td><td>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Merokok :</strong></td><td>"  . $row["merokok"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Olahraga :</strong></td><td>"  . $row["olahraga"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Jenis Olahraga :</strong></td><td>"  . $row["j_olahraga"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Alkohol :</strong></td><td>"  . $row["alkohol"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Obat-obatan :</strong></td><td>"  . $row["obat"] . "</td></tr>";
-              echo "<tr><td><strong>Riwayat Alergi :</strong></td><td>" . $row["alergi"] . "</td></tr>";
+              echo "<tr>
+               <td style='font-size: 14px; font-weight: bold;'>Alergi :</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["alergi"]) . "</td>
+                   </tr>";
 
                //Pemeriksaan Fisik
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>PEMERIKSAAN FISIK</strong></td></tr>";
@@ -230,13 +236,22 @@
               // echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGPT :</strong></td><td>"  . $row["sgpt"] . " mg/dl";
               // //thorax
-              // echo "<tr><td><strong style='font-size: 14px;'>RONTGEN THORAX :</strong></td><td>"  . $row["thorax"] . "</td></tr>";
+              // echo "<tr>
+              <td style='font-size: 14px; font-weight: bold;'>RONTGEN THORAX:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>
+                  </tr>";
 
               // //Kesan
-              // echo "<tr><td><strong style='font-size: 14px;'>KESAN :</strong></td><td>"  . $row["kesan"] . "</td></tr>";
+              //echo "<tr>
+                    <td style='font-size: 14px; font-weight: bold;'>KESAN:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["kesan"]) . "</td>
+                  </tr>";
 
               // //Anjuran
-              // echo "<tr><td><strong style='font-size: 14px;'>ANJURAN :</strong></td><td><pre style='font-size: 12px; font-family: Arial, sans-serif; line-height: 0.5;'>"  . nl2br($row["anjuran"]) . "</pre></td></tr>";
+              //echo "<tr>
+                    <td style='font-size: 14px; font-weight: bold;'>ANJURAN:</td>
+                    <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
+                  </tr>";
 
 
             }

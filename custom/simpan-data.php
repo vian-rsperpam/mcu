@@ -7,11 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $nama = $_POST['nama'];
     $rm = $_POST['rm'];
+    $tgl_lahir = $_POST['tgl_lahir'];
+    $jenis_kelamin = $_POST['jenis_kelamin']; // Corrected here
     $tanggal = $_POST['tanggal'];
     $penjamin = $_POST['penjamin'];
     $asuransi = isset($_POST['asuransi']) ? $_POST['asuransi'] : '';
     $paket = $_POST['paket'];
-    $usia = $_POST['usia'];
+    $usia_tahun = $_POST['usia_tahun'];
+    $usia_bulan = $_POST['usia_bulan'];
     $keluhan = nl2br($_POST['keluhan']);
     $riwayatdahulu = $_POST['riwayatdahulu'];
     $riwayatkeluarga = nl2br($_POST['riwayatkeluarga']);
@@ -19,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $alkohol = $_POST['alkohol'];
     $obat = $_POST['obat'];
     $olahraga = $_POST['olahraga'];
+    $jenis_olahraga = $_POST['jenis_olahraga'];
     $riwayatalergi = $_POST['riwayatalergi'];
     $alergi = nl2br($_POST['alergi']);
     $perkusi_jantung = $_POST['perkusi'];
@@ -68,6 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mch = $_POST["MCH"];
     $sgot = $_POST['sgot'];
     $sgpt = $_POST['sgpt'];
+    $kolesterol = $_POST['kolesterol'];
+    $hdl  = $_POST['hdl'];
+    $ldl  = $_POST['ldl'];
+    $tg = $_POST['tg'];
     $asam_urat = $_POST['asam-urat'];
     $ureum = $_POST['ureum'];
     $creatin = $_POST['creatin'];
@@ -80,17 +88,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $anjuran = nl2br($_POST['anjuran']);
 
    
-    $sql = "INSERT INTO custom   (nama, rm, tanggal, penjamin, asuransi, paket, usia,
-                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, riwayatalergi, alergi,
+    $sql = "INSERT INTO custom   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
+                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, riwayatalergi, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
-                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, sgot, sgpt, asam_urat, ureum, creatin, glucosa_puasa, glucosa_pp, hbsag, urinalisa,
+                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, sgot, sgpt, kolesterol, hdl, ldl, tg, asam_urat, ureum, creatin, glucosa_puasa, glucosa_pp, hbsag, urinalisa,
                                 thorax, kesan, anjuran)
-            VALUES ('$nama', '$rm', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia',
-                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$riwayatalergi', '$alergi',
+            VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
+                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$sgot', '$sgpt', '$asam_urat', '$ureum', '$creatin', '$glucosa_puasa', '$glucosa_pp', '$hbsag', '$urinalisa',
+                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$sgot', '$sgpt', '$kolesterol', '$hdl', '$ldl', '$tg', '$asam_urat', '$ureum', '$creatin', '$glucosa_puasa', '$glucosa_pp', '$hbsag', '$urinalisa',
                     '$thorax','$kesan','$anjuran')";
 
 if ($conn->query($sql) === TRUE) {
@@ -98,7 +106,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.html ");
+    header("Location: /mcu/index.php ");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

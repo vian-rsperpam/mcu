@@ -105,7 +105,7 @@
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM standart WHERE nama = '$nama'";
+          $sql = "SELECT * FROM custom WHERE nama = '$nama'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -397,9 +397,10 @@
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
                   </tr>";}
 
-
+              }
             }
-          } else {
+            }
+           else {
             echo "<tr><td colspan='2'>Tidak ada data ditemukan.</td></tr>";
           }
 

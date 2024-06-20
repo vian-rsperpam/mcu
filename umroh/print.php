@@ -9,6 +9,7 @@
     header {
       text-align: center;
       margin-bottom: 10px;
+      margin-left: 40px;
     }
     
     .company-logo {
@@ -71,11 +72,13 @@
       font-weight: bold;
       text-decoration: underline;
       text-align: left;
+margin-left: 40px;
       /* margin-left: 400px; */
     }
     .footer2 {
       font-size: 16px;
       text-align: left;
+      margin-left: 40px;
       /* margin-left: 420px */
       
     }
@@ -149,12 +152,12 @@
               //anamnesa
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
               echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Keluhan :</td>
+               <td style='font-size: 12px; font-weight: bold;'>Keluhan :</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["keluhan"]) . "</td>
                    </tr>";
               echo "<tr><td><strong>Riwayat Penyakit Dahulu :</strong></td><td>" . $row["riwayatdahulu"] . "</td></tr>";
              echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Riwayat Penyakit Keluarga :</td>
+               <td style='font-size: 12px; font-weight: bold;'>Riwayat Penyakit Keluarga :</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["riwayatkeluarga"]) . "</td>
                    </tr>";
               echo "<tr><td><strong>Riwayat Kebiasaan :</strong></td><td>";
@@ -164,7 +167,7 @@
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Alkohol :</strong></td><td>"  . $row["alkohol"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Obat-obatan :</strong></td><td>"  . $row["obat"] . "</td></tr>";
               echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Alergi :</td>
+               <td style='font-size: 12px; font-weight: bold;'>Alergi :</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["alergi"]) . "</td>
                    </tr>";
 
@@ -221,14 +224,14 @@
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";
                echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Auskultasi:</td>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;Auskultasi:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["auskultasi_jantung"]) . "</td>
                    </tr>";
 
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>PULMO</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_pulmo"] . "</td></tr>";
                echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Auskultasi:</td>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;Auskultasi:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["auskultasi_pulmo"]) . "</td>
                    </tr>";
 
@@ -240,7 +243,7 @@
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["palpalsi_abdomen"]) . "</td>
                    </tr>";
                echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>Auskultasi:</td>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;Auskultasi:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["auskultasi_abdomen"]) . "</td>
                    </tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Ginjal :</strong></td><td>"  . $row["ginjal"] . "</td></tr>";
@@ -345,7 +348,7 @@
 </div>
 
 <div class="footer">
-<br><br><br>(dr Anisa Nor Chalifa)
+<br><br>(dr Anisa Nor Chalifa)
 </div>
 
 <div class="footer2">

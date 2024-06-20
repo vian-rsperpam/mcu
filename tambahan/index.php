@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCU Basic</title>
+  <title>MCU Custom</title>
   <!-- Add Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
@@ -104,7 +104,7 @@
     <div class="card">
       <div class="card-header">
         <img src="../logo.png" alt="Logo">
-        MCU Calon Karyawan
+        MCU Tambahan
       </div>
       <div class="card-body">
         <form class="form-horizontal" method="post" action="simpan-data.php" id="mainForm">
@@ -132,8 +132,8 @@
             <?php include 'form/rka.html'; ?>
           </div>
           <div class="d-flex justify-content-between">
-            <button id="submitBtn" class="btn btn-primary btn-lg btn-block mr-2" type="submit" name="action" value="print">Simpan</button>
-            <a id="cancelBtn" href="../index.php" class="btn btn-secondary btn-lg">Batal</a>
+            <button id="submitBtn" class="btn btn-primary btn-lg btn-block" type="submit" name="action" value="print">Simpan</button>
+            <a id="cancelBtn" href="../index.php" class="btn btn-secondary btn-lg btn-cancel">Batal</a>
           </div>
         </form>
       </div>

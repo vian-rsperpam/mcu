@@ -75,7 +75,7 @@
         $search_nama = isset($_GET['search_nama']) ? $_GET['search_nama'] : '';
         $search_rm = isset($_GET['search_rm']) ? $_GET['search_rm'] : '';
 
-        $sql = "SELECT * FROM custom WHERE nama LIKE '%$search_nama%' AND rm LIKE '%$search_rm%'";
+        $sql = "SELECT * FROM tambahan WHERE nama LIKE '%$search_nama%' AND rm LIKE '%$search_rm%'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

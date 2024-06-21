@@ -12,7 +12,7 @@
 <body>
 
 <div class="container mt-5">
-  <h2>Hasil Medical Check UP</h2>
+  <h2>Hasil Medical Check UP Tambahan</h2>
 
   <div class="mb-3">
   <div class="btn-group">
@@ -27,7 +27,7 @@
   <a class="dropdown-item" href="/mcu/preemployee/wanita/hasil-preemployee-wanita.php">Pre-Employee Wanita</a>
   <div class="dropdown-divider"></div>
   <a class="dropdown-item" href="/mcu/umroh/hasil-umroh.php">Umroh</a>
-  <a class="dropdown-item" href="/mcu/hidup sehat/hasil-hidupsehat.php">Prog Hidup Sehat</a>
+  <a class="dropdown-item" href="/mcu/hidup sehat/hasil-hidupsehat.php">Program Hidup Sehat</a>
   <div class="dropdown-divider"></div>
   <a class="dropdown-item" href="/mcu/calonkaryawan/hasil-calon-karyawan.php">Calon Karyawan</a>
   <a class="dropdown-item" href="/mcu/kartap/hasil-karyawan-tetap.php">Karyawan Tetap</a>

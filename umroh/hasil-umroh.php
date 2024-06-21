@@ -51,6 +51,9 @@
         <input type="text" name="search_rm" class="form-control" placeholder="Cari berdasarkan RM">
       </div>
       <div class="col-md-4 mb-2">
+      <input type="date" name="search_tanggal" class="form-control" placeholder="Cari berdasarkan tanggal">
+    </div>
+    <div class="col-md-4 mb-2">
         <button type="submit" class="btn btn-primary">Cari</button>
       </div>
     </div>
@@ -75,8 +78,18 @@
         // Query pencarian
         $search_nama = isset($_GET['search_nama']) ? $_GET['search_nama'] : '';
         $search_rm = isset($_GET['search_rm']) ? $_GET['search_rm'] : '';
-
+        $search_tanggal = isset($_GET['search_tanggal']) ? $_GET['search_tanggal'] : '';
+        
         $sql = "SELECT * FROM umroh WHERE nama LIKE '%$search_nama%' AND rm LIKE '%$search_rm%'";
+        
+        // Jika ada tanggal yang dimasukkan, tambahkan kondisi pencarian berdasarkan tanggal ke kueri SQL
+        if (!empty($search_tanggal)) {
+          $sql .= " AND tanggal = '$search_tanggal'";
+        }
+        
+        // Tambahkan ORDER BY untuk mengurutkan berdasarkan tanggal terbaru
+        $sql .= " ORDER BY tanggal DESC";
+        
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

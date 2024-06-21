@@ -7,7 +7,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 20px;
       margin-left: 40px;
     }

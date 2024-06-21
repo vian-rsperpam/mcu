@@ -12,7 +12,7 @@
 <body>
 
 <div class="container mt-5">
-  <h2>Data Pasien MCU Basic</h2>
+  <h2>Hasil Medical Check UP</h2>
 
   <div class="mb-3">
   <div class="btn-group">

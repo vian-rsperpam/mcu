@@ -102,6 +102,7 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
@@ -136,6 +137,7 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
@@ -147,6 +149,28 @@ margin-left: 40px;
           if ($result->num_rows > 0) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
+              $hemoglobin_status = getHemoglobinStatus($row["hemoglobin"], $row["jenis_kelamin"]);
+              $hematokrit_status = getHematokritStatus($row["hematokrit"], $row["jenis_kelamin"]);
+              $trombosit_status = getTrombositStatus($row["trombosit"]);
+              $leukosit_status = getLeukositStatus($row["leukosit"]);
+              $led_status = getLedStatus($row["led"], $row["jenis_kelamin"]);
+              $eritrosit_status = geteritrositStatus($row["eritrosit"], $row["jenis_kelamin"]);
+              $mcv_status = getMCVStatus($row["mcv"]);
+              $mch_status = getMCHStatus($row["mch"]);
+              $sgot_status = getSGOTStatus($row["sgot"]);
+              $sgpt_status = getSGPTStatus($row["sgpt"]);
+              $kolesterol_status = getKolesterolStatus($row["kolesterol"]);
+              $hdl_status = getHDLStatus($row["hdl"]);
+              $ldl_status = getLDLStatus($row["ldl"]);
+              $tg_status = gettgStatus($row["tg"]);
+              $asamurat_status = getAsamuratStatus($row["asam_urat"],$row["jenis_kelamin"]);
+              $ureum_status = getUreumStatus($row["ureum"],$row["jenis_kelamin"]);
+              $creatin_status = getCreatinStatus($row["creatin"],$row["jenis_kelamin"]);
+              $glucosapuasa_status = getGlucosapuasaStatus($row["glucosa_puasa"],$row["jenis_kelamin"]);
+              $glucosapp_status = getGlucosappStatus($row["glucosa_pp"],$row["jenis_kelamin"]);
+
+              $urinalisa_status = getUrinalisaStatus($row["urinalisa"]);
+
               //anamnesa
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
               echo "<tr>
@@ -262,47 +286,38 @@ margin-left: 40px;
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LABORATORIUM</strong></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>a. Darah Lengkap :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hemoglobin :</strong></td><td>"  . $row["hemoglobin"] . " g/dl";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 14 - 18g/dL)";
-              echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hematokrit :</strong></td><td>"  . $row["hematokrit"] . " %";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 41 - 54%)";
-              echo "<br><br><br><br><br>(Nilai Normal Wanita : 38 - 46%)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trombosit :</strong></td><td>"  . $row["trombosit"] . " μL";
-              echo "<br><br><br><br><br><small>(Normal : 150.000 - 400.000 μL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL";
-              echo "<br><br><br><br><br><small>(Normal : 50.000 - 10.000 μL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 0 dan 15  mm/jam)";
-              echo "<br><br><br><br><br>(Nilai Normal Waninita : 0 dan 20 mm/jam)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . "";
+              echo "<tr><td>&emsp;&emsp;<strong>a. Darah Lengkap :</strong></td><td>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hemoglobin :</strong></td><td>"  . $row["hemoglobin"] . " g/dl <strong>" . $hemoglobin_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 14 - 18 g/dL)<br><br><br><br>(Nilai Normal Wanita: 12 - 16 g/dL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hematokrit :</strong></td><td>"  . $row["hematokrit"] . " % <strong>" . $hematokrit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 41 - 54 %)<br><br><br><br>(Nilai Normal Wanita: 38 - 46 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trombosit :</strong></td><td>"  . $row["trombosit"] . " μL <strong>" . $trombosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 150.000 - 400.000 μL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50.000 - 100.000 μL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam <strong>" . $led_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0-15 mm/jam)<br><br><br><br>(Nilai Normal Wanita: 0 - 20 mm/jam)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . " μL <strong>" . $eritrosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 4.700.000 - 6.400.000 μL)<br><br><br><br>(Nilai Normal Wanita: 4.200.000 - 5.400000 μL)</small></td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis :</strong></td><td>"  . $row["hitung_jenis"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl";
-              echo "<br><br><br><br><br><small>(Normal : 80 - 100 fl)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg";
-              echo "<br><br><br><br><br><small>(Normal : 27,5 - 33,2 pg)";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl <strong>" . $mcv_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 80 - 100 fl)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 27.5 - 33.2 pg)</small></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>b. Fungsi Hati :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGOT :</strong></td><td>"  . $row["sgot"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGPT :</strong></td><td>"  . $row["sgpt"] . " U/L";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol total :</strong></td><td>"  . $row["kolesterol"] . " mg/dl";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol HDL :</strong></td><td>"  . $row["hdl"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol LDL :</strong></td><td>"  . $row["ldl"] . " mg/dl";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trigliserida :</strong></td><td>"  . $row["tg"] . " mg/dl";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGOT :</strong></td><td>"  . $row["sgot"] . " μ/L <strong>" . $sgot_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 5 - 40 μ/L)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGPT :</strong></td><td>"  . $row["sgpt"] . " μ/L <strong>" . $sgpt_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 7 - 56 μ/L)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol Total :</strong></td><td>"  . $row["kolesterol"] . " mg/dl <strong>" . $kolesterol_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 200 mg/dl)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>HDL :</strong></td><td>"  . $row["hdl"] . " mg/dl <strong>" . $hdl_status . "</strong><br><br><br><br><br><small>(Nilai Normal : > 60 mg/dl)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LDL :</strong></td><td>"  . $row["ldl"] . " mg/dl <strong>" . $ldl_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 100 mg/dl)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trigliserida :</strong></td><td>"  . $row["tg"] . " mg/dl <strong>" . $tg_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 150 mg/dl)</small></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>c. Fungsi Ginjal :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Asam Urat Darah :</strong></td><td>"  . $row["asam_urat"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Ureum :</strong></td><td>"  . $row["ureum"] . " U/L";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Creatin :</strong></td><td>"  . $row["creatin"] . " mg/dl";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Asam Urat Darah :</strong></td><td>"  . $row["asam_urat"] . " mg/dl <strong>" . $asamurat_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 2.5 - 7 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 1.5 - 6 mg/dL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Ureum :</strong></td><td>"  . $row["ureum"] . " mg/dl <strong>" . $ureum_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 8 - 24 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 6 - 21 mg/dL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Creatin :</strong></td><td>"  . $row["creatin"] . " mg/dl <strong>" . $creatin_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0.6 - 1.2 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 0.5 - 1.1 mg/dL)</small></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>e. Gula Darah :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glukosa Puasa :</strong></td><td>"  . $row["glucosa_puasa"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa 2 Jam PP :</strong></td><td>"  . $row["glucosa_pp"] . "";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa Puasa :</strong></td><td>"  . $row["glucosa_puasa"] . " mg/dl <strong>" . $glucosapuasa_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 90 - 100 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 90 -100 mg/dL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa 2 Jam PP :</strong></td><td>"  . $row["glucosa_pp"] . " mg/dl <strong>" . $glucosapp_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 90 - 140 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 90 -140 mg/dL)</small></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>f. Imunoserologi :</strong></td><td>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>HBsAG :</strong></td><td>"  . $row["hbsag"] . "";
 
-              echo "<tr><td>&emsp;&emsp;<strong>g. Urinalisa :</strong></td><td>" . $row["urinalisa"] . " pH";
+              echo "<tr><td>&emsp;&emsp;<strong>c. Urinalisa :</strong></td><td>" . $row["urinalisa"] . " pH <strong>" . $urinalisa_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 5 - 8 pH)</small></td></tr>";
 
               //thorax
               echo "<tr>

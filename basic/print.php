@@ -139,6 +139,8 @@
               echo "<tr><td><strong>No RM :</strong></td><td>" . $row["rm"] . "</td></tr>";
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
+              if (!empty($row["jenis_asuransi"])) {
+              echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";}
               echo "<tr><td><strong>Paket :</strong></td><td>" . $row["paket"] . "</td></tr>";
               echo "<tr><td><strong>Usia :</strong></td><td>" . $row["usia_tahun"] . " Tahun " . $row["usia_bulan"] . " Bulan</td></tr>";
             }

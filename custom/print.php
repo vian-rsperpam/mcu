@@ -118,6 +118,8 @@ margin-left: 40px;
               echo "<tr><td><strong>No RM :</strong></td><td>" . $row["rm"] . "</td></tr>";
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
+              if (!empty($row["jenis_asuransi"])) {
+              echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";}
               echo "<tr><td><strong>Paket :</strong></td><td>" . $row["paket"] . "</td></tr>";
               echo "<tr><td><strong>Usia :</strong></td><td>" . $row["usia_tahun"] . " Tahun " . $row["usia_bulan"] . " Bulan</td></tr>";
             }
@@ -187,8 +189,9 @@ margin-left: 40px;
                if (!empty($row["tinggi_badan"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Tinggi Badan :</strong></td><td>"  . $row["tinggi_badan"] . " cm</td></tr>";}
                echo "<tr><td>&emsp;&emsp;<strong>BMI :</strong></td><td>"  . $row["bmi_status"] . " </td></tr>";
-            
-               echo "<tr><td><strong>Tanda-tanda vital</strong></td><td>";
+              
+               if (!empty($row["tensi"])) {
+               echo "<tr><td><strong>Tanda-tanda vital</strong></td><td>";}
                if (!empty($row["tensi"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Tensi :</strong></td><td>"  . $row["tensi"] . " mmHg</td></tr>";}
                if (!empty($row["nadi"])) {
@@ -199,7 +202,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Suhu :</strong></td><td>"  . $row["suhu"] . " &deg C</td></tr>";}
 
                //Mata
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MATA</strong></td></tr>";
+               if (!empty($row["butawarna"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MATA</strong></td></tr>";}
                if (!empty($row["butawarna"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";}
                if (!empty($row["konjunctiva"])) {
@@ -210,7 +214,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Palpebra :</strong></td><td>"  . $row["palpebra"] . " </td></tr>";}
                if (!empty($row["refleks_cahaya"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Refleks Cahaya :</strong></td><td>"  . $row["refleks_cahaya"] . " </td></tr>";}
-               echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";
+               if (!empty($row["od"])) {
+               echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";}
                if (!empty($row["od"])) {
               echo "<tr>
                <td style='font-size: 14px; font-weight: bold;'>OD:</td>
@@ -225,7 +230,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";}
 
               //Mulut
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MULUT</strong></td></tr>";
+               if (!empty($row["faring"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MULUT</strong></td></tr>";}
                if (!empty($row["faring"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Faring :</strong></td><td>"  . $row["faring"] . "</td></tr>";}
                if (!empty($row["tonsil"])) {
@@ -234,14 +240,16 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Gigi :</strong></td><td>"  . $row["gigi"] . " </td></tr>";
                
               //Leher
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LEHER</strong></td></tr>";
+               if (!empty($row["kgb"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LEHER</strong></td></tr>";}
                if (!empty($row["kgb"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran KGB :</strong></td><td>"  . $row["kgb"] . "</td></tr>";}
                if (!empty($row["tyroid"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran Tyroid :</strong></td><td>"  . $row["tyroid"] . "</td></tr>";}
 
               //Telinga
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>TELINGA</strong></td></tr>";
+               if (!empty($row["tympani"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>TELINGA</strong></td></tr>";}
                if (!empty($row["tympani"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Membran Tympani :</strong></td><td>"  . $row["tympani"] . "</td></tr>";}
                if (!empty($row["prope"])) {
@@ -250,8 +258,9 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Infeksi :</strong></td><td>"  . $row["infeksi"] . "</td></tr>";}
 
                //Costovertebra
+               if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>COSTROVERTEBRA</strong></td></tr>";
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";}
                if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";}
                if (!empty($row["auskultasi_jantung"])) {

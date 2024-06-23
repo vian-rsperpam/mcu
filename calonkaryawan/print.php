@@ -121,6 +121,8 @@ margin-left: 40px;
               echo "<tr><td><strong>No RM :</strong></td><td>" . $row["rm"] . "</td></tr>";
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
+              if (!empty($row["jenis_asuransi"])) {
+              echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";}
               echo "<tr><td><strong>Paket :</strong></td><td>" . $row["paket"] . "</td></tr>";
               echo "<tr><td><strong>Usia :</strong></td><td>" . $row["usia_tahun"] . " Tahun " . $row["usia_bulan"] . " Bulan</td></tr>";
             }
@@ -286,8 +288,6 @@ margin-left: 40px;
               echo "<br><br><br><br><br><small>(Normal : 80 - 100 fl)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg";
               echo "<br><br><br><br><br><small>(Normal : 27,5 - 33,2 pg)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCHC :</strong></td><td>"  . $row["mchc"] . " g/dl";
-              echo "<br><br><br><br><br><small>(Normal : 32 - 36 g/dl)";
 
               echo "<tr><td>&emsp;&emsp;<strong>b. Gula Darah Sewaktu :</strong></td><td>" . $row["gds"] . " mg/dl";
 

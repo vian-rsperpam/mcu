@@ -21,10 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+    if ($result !== false && $result->num_rows > 0) {
         // Pengguna ditemukan, set sesi login
-        $_SESSION['username'] = $username;
-        $_SESSION['fullname'] = $fullname;
+        $user = $result->fetch_assoc();
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['fullname'] = $user['fullname']; // Pastikan $fullname diambil dari hasil query
         // Redirect ke halaman utama
         header("Location: index.php");
         exit();

@@ -7,7 +7,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 20px;
       margin-left: 40px;
     }
@@ -108,7 +108,7 @@ margin-left: 40px;
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM basic WHERE nama = '$nama'";
+          $sql = "SELECT * FROM preemploye_wanita WHERE nama = '$nama'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -142,7 +142,7 @@ margin-left: 40px;
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM basic WHERE nama = '$nama'";
+          $sql = "SELECT * FROM preemploye_wanita WHERE nama = '$nama'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {

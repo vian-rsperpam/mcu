@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $obat = $_POST['obat'];
     $olahraga = $_POST['olahraga'];
     $jenis_olahraga = $_POST['jenis_olahraga'];
-    $riwayatalergi = $_POST['riwayatalergi'];
     $alergi = nl2br($_POST['alergi']);
     $perkusi_jantung = $_POST['perkusi'];
     $auskultasi_jantung = nl2br($_POST['jantung-auskultasi']);
@@ -71,21 +70,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mcv = $_POST["MCV"];
     $mch = $_POST["MCH"];
     $gds = $_POST["gds"];
-    $sgpt = $_POST['hbsag'];
+    $hbsag = $_POST["hbsag"];
     $urinalisa = $_POST["urinalisa"];
     $thorax = nl2br($_POST['thorax']);
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
 
    
-    $sql = "INSERT INTO preemloye_pria   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia,
-                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahragariwayatalergi, alergi,
+    $sql = "INSERT INTO preemploye_pria   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
+                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
                                 hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, gds, hbsag, urinalisa,
                                 thorax, kesan, anjuran)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
-                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
+                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
                     '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', '$hbsag','$urinalisa',
@@ -96,7 +95,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.html ");
+    header("Location: /mcu/preemployee/pria/hasil-preemployee-pria.php ");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

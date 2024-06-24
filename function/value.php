@@ -157,7 +157,7 @@ function getSGOTStatus($sgot) {
 
 //SGPT
 function getSGPTStatus($sgpt) {
-    if($sgpt >= 7 && $sgot <= 56){
+    if($sgpt >= 7 && $sgpt <= 56){
         return "Normal";
     } elseif ($sgpt <7){
         return "Low";
@@ -231,7 +231,7 @@ function getAsamuratStatus($asam_urat, $jenis_kelamin) {
 //Ureum
 function getUreumStatus($ureum, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($ureum >= 8 && $asam_urat <= 24) {
+        if ($ureum >= 8 && $ureum <= 24) {
             return "Normal";
         } elseif ($ureum < 8) {
             return "Low";
@@ -302,7 +302,7 @@ function getGlucosappStatus($glucosa_pp, $jenis_kelamin) {
             return "High";
         }
     } else {
-        if ($glucosa_pp >= 90 && $glucosa_p <= 140) {
+        if ($glucosa_pp >= 90 && $glucosa_pp <= 140) {
             return "Normal";
         } elseif ($glucosa_pp < 90) {
             return "Low";

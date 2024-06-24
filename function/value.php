@@ -107,6 +107,7 @@ function getEritrositStatus($eritrosit, $jenis_kelamin) {
     }
 }
 
+//MCV
 function getMCVStatus($mcv) {
     if($mcv >= 80 && $mcv <= 100){
         return "Normal";
@@ -118,6 +119,7 @@ function getMCVStatus($mcv) {
     
 }
 
+//MCH
 function getMCHStatus($mch) {
     if($mch >= 27.5 && $mch <= 33.2){
         return "Normal";
@@ -129,6 +131,7 @@ function getMCHStatus($mch) {
     
 }
 
+//MCHC
 function getMCHCStatus($mchc) {
     if($mchc >= 32 && $mchc <= 36){
         return "Normal";
@@ -140,6 +143,7 @@ function getMCHCStatus($mchc) {
     
 }
 
+//SGOT
 function getSGOTStatus($sgot) {
     if($sgot >= 5 && $sgot <= 40){
         return "Normal";
@@ -151,6 +155,7 @@ function getSGOTStatus($sgot) {
     
 }
 
+//SGPT
 function getSGPTStatus($sgpt) {
     if($sgpt >= 7 && $sgot <= 56){
         return "Normal";
@@ -162,6 +167,7 @@ function getSGPTStatus($sgpt) {
     
 }
 
+//Kolesterol
 function getKolesterolStatus($kolesterol) {
     if($kolesterol >= 70 && $kolesterol <= 200){
         return "Normal";
@@ -173,6 +179,7 @@ function getKolesterolStatus($kolesterol) {
     
 }
 
+//HDL
 function getHDLStatus($hdl) {
     if ($hdl >= 60) {
         return "Normal";
@@ -181,6 +188,7 @@ function getHDLStatus($hdl) {
     }
 }
 
+//LDL
 function getLDLStatus($ldl) {
     if ($ldl <= 100) {
         return "Normal";
@@ -189,6 +197,7 @@ function getLDLStatus($ldl) {
     }
 }
 
+//TG
 function getTGStatus($tg) {
     if ($tg <= 150) {
         return "Normal";
@@ -197,6 +206,8 @@ function getTGStatus($tg) {
     }
 }
 
+
+//Asam Urat
 function getAsamuratStatus($asam_urat, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
         if ($asam_urat >= 2.5 && $asam_urat <= 7) {
@@ -217,6 +228,7 @@ function getAsamuratStatus($asam_urat, $jenis_kelamin) {
     }
 }
 
+//Ureum
 function getUreumStatus($ureum, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
         if ($ureum >= 8 && $asam_urat <= 24) {
@@ -237,6 +249,7 @@ function getUreumStatus($ureum, $jenis_kelamin) {
     }
 }
 
+//Creatin
 function getCreatinStatus($creatin, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
         if ($creatin >= 0.6 && $creatin <= 1.2) {
@@ -257,6 +270,7 @@ function getCreatinStatus($creatin, $jenis_kelamin) {
     }
 }
 
+//Glucosa Puasa
 function getGlucosapuasaStatus($glucosa_puasa, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
         if ($glucosa_puasa >= 90 && $glucosa_puasa <= 100) {
@@ -277,6 +291,7 @@ function getGlucosapuasaStatus($glucosa_puasa, $jenis_kelamin) {
     }
 }
 
+//Glucosa 2 jam
 function getGlucosappStatus($glucosa_pp, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
         if ($glucosa_pp >= 90 && $glucosa_pp <= 140) {
@@ -297,6 +312,7 @@ function getGlucosappStatus($glucosa_pp, $jenis_kelamin) {
     }
 }
 
+//GDS
 function getGDSStatus($gds) {
     if($gds >= 70 && $gds <= 200){
         return "Normal";
@@ -308,6 +324,7 @@ function getGDSStatus($gds) {
     
 }
 
+//Urinalisa
 function getUrinalisaStatus($urinalisa) {
     if($urinalisa >= 5 && $urinalisa <= 8){
         return "Normal";

@@ -206,15 +206,15 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Palpebra :</strong></td><td>"  . $row["palpebra"] . " </td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Refleks Cahaya :</strong></td><td>"  . $row["refleks_cahaya"] . " </td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";
-              echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>OD:</td>
+               echo "<tr>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;OD:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["od"]) . "</td>
                    </tr>";
-              echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>OS:</td>
+            echo "<tr>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;OS:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["os"]) . "</td>
                    </tr>";
-               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
+               echo "<tr><td>&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
 
               //Mulut
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MULUT</strong></td></tr>";

@@ -81,7 +81,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.html ");
+    header("Location: /mcu/kartap/hasil-karyawan-tetap.php ");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

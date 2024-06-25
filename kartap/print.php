@@ -253,7 +253,7 @@ margin-left: 40px;
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["ekstremitas_atas"]) . "</td>
                    </tr>";
 
-               echo "<tr>
+            echo "<tr>
                <td style='font-size: 14px; font-weight: bold;'>Ekstremitas Bawah:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["ekstremitas_bawah"]) . "</td>
                    </tr>";
@@ -264,7 +264,8 @@ margin-left: 40px;
               echo "<tr><td>&emsp;&emsp;<strong>Kelainan Kulit :</strong></td><td>"  . $row["kelainan_kulit"] . "</td></tr>";
 
               //Laboratorium
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>HBsAG :</strong></td><td>"  . $row["hbsag"] . "";
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LABORATORIUM</strong></td></tr>";
+              echo "<tr><td>&emsp;&emsp;<strong>HBsAG :</strong></td><td>"  . $row["hbsag"] . "";
 
               //thorax
               echo "<tr>

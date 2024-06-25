@@ -71,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mch = $_POST["MCH"];
     $gds = $_POST["gds"];
     $urinalisa = $_POST["urinalisa"];
-    $imunoserologi = $_POST["imunoserologi"];
     $thorax = nl2br($_POST['thorax']);
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
@@ -87,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', '$urinalisa','$imunoserologi'
+                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', '$urinalisa',
                     '$thorax','$kesan','$anjuran')";
 
 if ($conn->query($sql) === TRUE) {
@@ -95,7 +94,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.php ");
+    header("Location: /mcu/calonkaryawan/hasil-calonkaryawan.php ");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

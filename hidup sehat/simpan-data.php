@@ -23,20 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $obat = $_POST['obat'];
     $olahraga = $_POST['olahraga'];
     $jenis_olahraga = $_POST['jenis_olahraga'];
-    $riwayatalergi = $_POST['riwayatalergi'];
     $alergi = nl2br($_POST['alergi']);
-    $perkusi_jantung = $_POST['perkusi'];
-    $auskultasi_jantung = nl2br($_POST['jantung-auskultasi']);
-    $perkusi_pulmo = $_POST['pulmo-perkusi'];
-    $auskultasi_pulmo = nl2br($_POST['pulmo-auskultasi']);
-    $inspeksi_abdomen = $_POST['inspeksi'];
-    $palpalsi_abdomen = nl2br($_POST['palpalsi']);
-    $auskultasi_abdomen = nl2br($_POST['auskultasi']);
-    $ginjal = $_POST['ginjal'];
-    $ekstremitas_atas = nl2br($_POST['ekstremitas-atas']);
-    $ekstremitas_bawah = nl2br($_POST['ekstremitas-bawah']);
-    $tumor = $_POST['tumor'];
-    $kelainan_kulit = $_POST['kelainan-kulit'];
     $berat_badan = $_POST['berat_badan'];
     $tinggi_badan = $_POST['tinggi_badan'];
     $bmi = $_POST['bmi'];
@@ -45,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nadi = $_POST['nadi'];
     $respirasi = $_POST['respirasi'];
     $suhu = $_POST['suhu'];
+    $hasil_konsul = nl2br($_POST['hasil-konsul']);
     $hemoglobin = $_POST['hemoglobin'];
     $hematokrit = $_POST['hematokrit'];
     $trombosit = $_POST['trombosit'];
@@ -70,16 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
     $sql = "INSERT INTO hidup_sehat     (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
-                                        keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, riwayatalergi, alergi,
-                                        perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
-                                        berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, hemoglobin, hematokrit, trombosit, leukosit, led, 
+                                        keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
+                                        berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, hasil_konsul, hemoglobin, hematokrit, trombosit, leukosit, led, 
                                         eritrosit, hitung_jenis, mcv, mch, gds, 
                                         kolesterol, hdl, ldl, tg, glukosa_puasa, hba1c, 
                                         asam_urat, ureum, creatin, sgot, sgpt)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
-                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
-                    '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
-                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu','$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', 
+                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga','$alergi',
+                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu','$hasil_konsul', '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', 
                     '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', 
                     '$kolesterol', '$hdl', '$ldl', '$tg', '$glukosa_puasa', '$hba1c', 
                     '$asam_urat', '$ureum', '$creatin', '$sgot', '$sgpt')";
@@ -89,7 +75,7 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
 
     // Redirect to anamnesa.html
-    header("Location: /mcu/index.html ");
+    header("Location: /mcu/hidup sehat/hasil-hidupsehat.php");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

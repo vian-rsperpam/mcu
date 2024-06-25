@@ -40,7 +40,7 @@
       line-height: 3px;
     }
     .result1 {
-      border: 5px solid #000; /* Gaya border */
+      border: 2px solid #000; /* Gaya border */
       padding: 10px;
       text-align: left;
       margin: 0 auto; /* Untuk menempatkan di tengah */
@@ -51,7 +51,7 @@
     .title-container {
       text-align: center;
       margin-bottom: 20px;
-      border: 5px solid #000;
+      border: 0px solid #000;
       max-width: auto;
       position: center;
     }
@@ -95,7 +95,7 @@ margin-left: 40px;
 
 <div class="container mt 1">
   <div class="title-container">
-    <h5>KESIMPULAN <br> HASIL MEDICAL CHECKUP</h5>
+    <h3>KESIMPULAN <br> HASIL MEDICAL CHECKUP</h3>
   </div>
   <div class="result1">
     <table class="table">
@@ -151,7 +151,7 @@ margin-left: 40px;
             // Output data of each row
             while($row = $result->fetch_assoc()) {
               //anamnesa
-              echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ANAMNESA</strong></td></tr>";
               if (!empty($row["keluhan"])) {
                 echo "<tr>
                <td style='font-size: 12px; font-weight: bold;'>Keluhan :</td>
@@ -203,7 +203,7 @@ margin-left: 40px;
 
                //Mata
                if (!empty($row["butawarna"])) {
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MATA</strong></td></tr>";}
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";}
                if (!empty($row["butawarna"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";}
                if (!empty($row["konjunctiva"])) {
@@ -231,7 +231,7 @@ margin-left: 40px;
 
               //Mulut
                if (!empty($row["faring"])) {
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MULUT</strong></td></tr>";}
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MULUT</strong></td></tr>";}
                if (!empty($row["faring"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Faring :</strong></td><td>"  . $row["faring"] . "</td></tr>";}
                if (!empty($row["tonsil"])) {
@@ -241,7 +241,7 @@ margin-left: 40px;
                
               //Leher
                if (!empty($row["kgb"])) {
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LEHER</strong></td></tr>";}
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LEHER</strong></td></tr>";}
                if (!empty($row["kgb"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran KGB :</strong></td><td>"  . $row["kgb"] . "</td></tr>";}
                if (!empty($row["tyroid"])) {
@@ -249,7 +249,7 @@ margin-left: 40px;
 
               //Telinga
                if (!empty($row["tympani"])) {
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>TELINGA</strong></td></tr>";}
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>TELINGA</strong></td></tr>";}
                if (!empty($row["tympani"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Membran Tympani :</strong></td><td>"  . $row["tympani"] . "</td></tr>";}
                if (!empty($row["prope"])) {
@@ -259,7 +259,7 @@ margin-left: 40px;
 
                //Costovertebra
                if (!empty($row["perkusi_jantung"])) {
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>COSTROVERTEBRA</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>COSTROVERTEBRA</strong></td></tr>";
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";}
                if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";}
@@ -279,7 +279,7 @@ margin-left: 40px;
                    </tr>";}
 
                //Abdomen
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ABDOMEN</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ABDOMEN</strong></td></tr>";
                if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";}
                if (!empty($row["auskultasi_jantung"])) {
@@ -306,7 +306,7 @@ margin-left: 40px;
                    </tr>";}
 
               //Kulit
-              echo "<tr><td colspan='2'><strong style='font-size: 14px;'>KULIT</strong></td></tr>";
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>KULIT</strong></td></tr>";
               if (!empty($row["tumor"])) {
               echo "<tr><td>&emsp;&emsp;<strong>Tumor :</strong></td><td>"  . $row["tumor"] . "</td></tr>";}
               if (!empty($row["kelainan_kulit"])) {
@@ -391,21 +391,21 @@ margin-left: 40px;
               //thorax
               if (!empty($row["thorax"])) {
               echo "<tr>
-              <td style='font-size: 14px; font-weight: bold;'>RONTGEN THORAX:</td>
+              <td style='font-size: 16px; font-weight: bold;'>RONTGEN THORAX:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>
                   </tr>";}
 
               //Kesan
               if (!empty($row["kesan"])) {
              echo "<tr>
-                    <td style='font-size: 14px; font-weight: bold;'>KESAN:</td>
+                    <td style='font-size: 16px; font-weight: bold;'>KESAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["kesan"]) . "</td>
                   </tr>";}
 
               //Anjuran
               if (!empty($row["anjuran"])) {
              echo "<tr>
-                    <td style='font-size: 14px; font-weight: bold;'>ANJURAN:</td>
+                    <td style='font-size: 16px; font-weight: bold;'>ANJURAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
                   </tr>";}
 

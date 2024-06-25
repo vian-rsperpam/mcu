@@ -40,7 +40,7 @@
       line-height: 3px;
     }
     .result1 {
-      border: 5px solid #000; /* Gaya border */
+      border: 2px solid #000; /* Gaya border */
       padding: 10px;
       text-align: left;
       margin: 0 auto; /* Untuk menempatkan di tengah */
@@ -51,7 +51,7 @@
     .title-container {
       text-align: center;
       margin-bottom: 20px;
-      border: 5px solid #000;
+      border: 0px solid #000;
       max-width: auto;
       position: center;
     }
@@ -95,7 +95,7 @@ margin-left: 40px;
 
 <div class="container mt 1">
   <div class="title-container">
-    <h5>KESIMPULAN <br> HASIL MEDICAL CHECKUP</h5>
+    <h3>KESIMPULAN <br> HASIL MEDICAL CHECKUP</h3>
   </div>
   <div class="result1">
     <table class="table">
@@ -103,6 +103,8 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../../function/value.php');
+
 
           // Get the name parameter from the URL
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
@@ -137,6 +139,8 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../../function/value.php');
+
 
           // Get the name parameter from the URL
           $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
@@ -148,8 +152,19 @@ margin-left: 40px;
           if ($result->num_rows > 0) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
+              $hemoglobin_status = getHemoglobinStatus($row["hemoglobin"], $row["jenis_kelamin"]);
+              $hematokrit_status = getHematokritStatus($row["hematokrit"], $row["jenis_kelamin"]);
+              $trombosit_status = getTrombositStatus($row["trombosit"]);
+              $leukosit_status = getLeukositStatus($row["leukosit"]);
+              $led_status = getLedStatus($row["led"], $row["jenis_kelamin"]);
+              $eritrosit_status = geteritrositStatus($row["eritrosit"], $row["jenis_kelamin"]);
+              $mcv_status = getMCVStatus($row["mcv"]);
+              $mch_status = getMCHStatus($row["mch"]);
+              $gds_status = getGDSStatus($row["gds"]);
+              $urinalisa_status = getUrinalisaStatus($row["urinalisa"]);
+
               //anamnesa
-              echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ANAMNESA</strong></td></tr>";
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ANAMNESA</strong></td></tr>";
               echo "<tr>
                <td style='font-size: 12px; font-weight: bold;'>Keluhan :</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["keluhan"]) . "</td>
@@ -171,7 +186,7 @@ margin-left: 40px;
                    </tr>";
 
                //Pemeriksaan Fisik
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>PEMERIKSAAN FISIK</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>PEMERIKSAAN FISIK</strong></td></tr>";
                echo "<tr><td><strong>Antropometri</strong></td><td>";
                echo "<tr><td>&emsp;&emsp;<strong>Berat Badan :</strong></td><td>"  . $row["berat_badan"] . " Kg</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Tinggi Badan :</strong></td><td>"  . $row["tinggi_badan"] . " cm</td></tr>";
@@ -184,42 +199,42 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Suhu :</strong></td><td>"  . $row["suhu"] . " &deg C</td></tr>";
 
                //Mata
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MATA</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Konjunctiva :</strong></td><td>"  . $row["konjunctiva"] . " cm</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Sclera :</strong></td><td>"  . $row["sclera"] . " </td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Palpebra :</strong></td><td>"  . $row["palpebra"] . " </td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Refleks Cahaya :</strong></td><td>"  . $row["refleks_cahaya"] . " </td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";
-              echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>OD:</td>
+               echo "<tr>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;OD:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["od"]) . "</td>
                    </tr>";
-              echo "<tr>
-               <td style='font-size: 14px; font-weight: bold;'>OS:</td>
+            echo "<tr>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;OS:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["os"]) . "</td>
                    </tr>";
-               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
+               echo "<tr><td>&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
 
               //Mulut
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>MULUT</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MULUT</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Faring :</strong></td><td>"  . $row["faring"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Tonsil :</strong></td><td>"  . $row["tonsil"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Gigi :</strong></td><td>"  . $row["gigi"] . " </td></tr>";
                
               //Leher
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LEHER</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LEHER</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran KGB :</strong></td><td>"  . $row["kgb"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran Tyroid :</strong></td><td>"  . $row["tyroid"] . "</td></tr>";
 
               //Telinga
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>TELINGA</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>TELINGA</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Membran Tympani :</strong></td><td>"  . $row["tympani"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Serumen Prope :</strong></td><td>"  . $row["prope"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Infeksi :</strong></td><td>"  . $row["infeksi"] . "</td></tr>";
 
                //Costovertebra
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>COSTROVERTEBRA</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>COSTROVERTEBRA</strong></td></tr>";
                echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";
                echo "<tr>
@@ -235,7 +250,7 @@ margin-left: 40px;
                    </tr>";
 
                //Abdomen
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>ABDOMEN</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ABDOMEN</strong></td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";
                echo "<tr><td>&emsp;&emsp;<strong>Palpalsi :</strong></td><td>"  . $row["auskultasi_jantung"] . "</td></tr>";
                echo "<tr>
@@ -256,7 +271,7 @@ margin-left: 40px;
                    </tr>";
 
               //Kulit
-              echo "<tr><td colspan='2'><strong style='font-size: 14px;'>KULIT</strong></td></tr>";
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>KULIT</strong></td></tr>";
               echo "<tr><td>&emsp;&emsp;<strong>Tumor :</strong></td><td>"  . $row["tumor"] . "</td></tr>";
               echo "<tr><td>&emsp;&emsp;<strong>Kelainan Kulit :</strong></td><td>"  . $row["kelainan_kulit"] . "</td></tr>";
 
@@ -264,49 +279,39 @@ margin-left: 40px;
               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>LABORATORIUM</strong></td></tr>";
 
               echo "<tr><td>&emsp;&emsp;<strong>a. Darah Lengkap :</strong></td><td>";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hemoglobin :</strong></td><td>"  . $row["hemoglobin"] . " g/dl";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 14 - 18g/dL)";
-              echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hematokrit :</strong></td><td>"  . $row["hematokrit"] . " %";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 41 - 54%)";
-              echo "<br><br><br><br><br>(Nilai Normal Wanita : 38 - 46%)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trombosit :</strong></td><td>"  . $row["trombosit"] . " μL";
-              echo "<br><br><br><br><br><small>(Normal : 150.000 - 400.000 μL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL";
-              echo "<br><br><br><br><br><small>(Normal : 50.000 - 10.000 μL)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 0 dan 15  mm/jam)";
-              echo "<br><br><br><br><br>(Nilai Normal Waninita : 0 dan 20 mm/jam)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . "";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hemoglobin :</strong></td><td>"  . $row["hemoglobin"] . " g/dl <strong>" . $hemoglobin_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 14 - 18 g/dL)<br><br><br><br>(Nilai Normal Wanita: 12 - 16 g/dL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hematokrit :</strong></td><td>"  . $row["hematokrit"] . " % <strong>" . $hematokrit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 41 - 54 %)<br><br><br><br>(Nilai Normal Wanita: 38 - 46 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trombosit :</strong></td><td>"  . $row["trombosit"] . " μL <strong>" . $trombosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 150.000 - 400.000 μL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50.000 - 100.000 μL)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam <strong>" . $led_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0-15 mm/jam)<br><br><br><br>(Nilai Normal Wanita: 0 - 20 mm/jam)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . " μL <strong>" . $eritrosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 4.700.000 - 6.400.000 μL)<br><br><br><br>(Nilai Normal Wanita: 4.200.000 - 5.400000 μL)</small></td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis :</strong></td><td>"  . $row["hitung_jenis"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl";
-              echo "<br><br><br><br><br><small>(Normal : 80 - 100 fl)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg";
-              echo "<br><br><br><br><br><small>(Normal : 27,5 - 33,2 pg)";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCHC :</strong></td><td>"  . $row["mchc"] . " g/dl";
-              echo "<br><br><br><br><br><small>(Normal : 32 - 36 g/dl)";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl <strong>" . $mcv_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 80 - 100 fl)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 27.5 - 33.2 pg)</small></td></tr>";
 
-              echo "<tr><td>&emsp;&emsp;<strong>b. Gula Darah Sewaktu :</strong></td><td>" . $row["gds"] . " mg/dl";
+              echo "<tr><td>&emsp;&emsp;<strong>b. Gula Darah Sewaktu :</strong></td><td>" . $row["gds"] . " mg/dl <strong>" . $gds_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 200 mg/dl)</small></td></tr>";
 
-              echo "<tr><td>&emsp;&emsp;<strong>c. Urinalisa :</strong></td><td>" . $row["urinalisa"] . " pH";
+              echo "<tr><td>&emsp;&emsp;<strong>c. Imunoserologi :</strong></td><td>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>HbsAg :</strong></td><td>"  . $row["hbsag"] . "";
 
-              echo "<tr><td>&emsp;&emsp;<strong>Gravidex Tes :</strong></td><td>" . $row["gravidex"] . " pH";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Urinalisa :</strong></td><td>" . $row["urinalisa"] . " pH <strong>" . $urinalisa_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 5 - 8 pH)</small></td></tr>";
 
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Gravidex Tes :</strong></td><td>" . $row["urinalisa"] . " g/dl";
               //thorax
               echo "<tr>
-              <td style='font-size: 14px; font-weight: bold;'>RONTGEN THORAX:</td>
+              <td style='font-size: 16px; font-weight: bold;'>RONTGEN THORAX:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>
                   </tr>";
 
               //Kesan
              echo "<tr>
-                    <td style='font-size: 14px; font-weight: bold;'>KESAN:</td>
+                    <td style='font-size: 16px; font-weight: bold;'>KESAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["kesan"]) . "</td>
                   </tr>";
 
               //Anjuran
              echo "<tr>
-                    <td style='font-size: 14px; font-weight: bold;'>ANJURAN:</td>
+                    <td style='font-size: 16px; font-weight: bold;'>ANJURAN:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["anjuran"]) . "</td>
                   </tr>";
 

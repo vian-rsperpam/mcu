@@ -105,10 +105,10 @@ margin-left: 40px;
           include ('koneksi.php');
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM tambahan WHERE nama = '$nama'";
+          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -139,10 +139,10 @@ margin-left: 40px;
           include ('koneksi.php');
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM tambahan WHERE nama = '$nama'";
+          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {

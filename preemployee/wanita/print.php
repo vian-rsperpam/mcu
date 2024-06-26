@@ -107,7 +107,7 @@ margin-left: 40px;
 
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
           $sql = "SELECT * FROM preemploye_wanita WHERE nama = '$nama'";
@@ -143,7 +143,7 @@ margin-left: 40px;
 
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
           $sql = "SELECT * FROM preemploye_wanita WHERE nama = '$nama'";

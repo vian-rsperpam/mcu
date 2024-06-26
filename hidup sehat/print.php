@@ -106,7 +106,7 @@ margin-left: 40px;
           include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
           $sql = "SELECT * FROM hidup_sehat WHERE nama = '$nama'";
@@ -142,7 +142,7 @@ margin-left: 40px;
           include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
-          $nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+          $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
           $sql = "SELECT * FROM hidup_sehat WHERE nama = '$nama'";

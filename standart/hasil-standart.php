@@ -97,7 +97,7 @@
             echo "<td>" . $row["rm"] . "</td>";
             echo "<td>" . $row["tanggal"] . "</td>";
             echo "<td>" . $row["paket"] . "</td>";
-            echo "<td><button class='btn btn-primary' onclick='printData(\"" . $row["nama"] . "\")'>View</button></td>";
+            echo "<td><button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button></td>";
             echo "</tr>";
           }
         } else {
@@ -110,7 +110,7 @@
 </div>
 
 <script>
-  function printData(nama) {
+  function printData(rm) {
     // You can implement your print logic here
     // For example, open a new window with printable content
     window.open('print.php?nama=' + nama, '_blank');

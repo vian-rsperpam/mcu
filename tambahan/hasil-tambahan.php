@@ -42,21 +42,22 @@
   
   <!-- Form untuk pencarian -->
   <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="mb-3">
-    <div class="form-row">
-      <div class="col-md-4 mb-2">
-        <input type="text" name="search_nama" class="form-control" placeholder="Cari berdasarkan nama">
-      </div>
-      <div class="col-md-4 mb-2">
-        <input type="text" name="search_rm" class="form-control" placeholder="Cari berdasarkan RM">
-      </div>
-      <div class="col-md-4 mb-2">
+  <div class="form-row align-items-end">
+    <div class="col-md-3 mb-2">
+      <input type="text" name="search_nama" class="form-control" placeholder="Cari berdasarkan nama">
+    </div>
+    <div class="col-md-3 mb-2">
+      <input type="text" name="search_rm" class="form-control" placeholder="Cari berdasarkan RM">
+    </div>
+    <div class="col-md-3 mb-2">
       <input type="date" name="search_tanggal" class="form-control" placeholder="Cari berdasarkan tanggal">
     </div>
-    <div class="col-md-4 mb-2">
-        <button type="submit" class="btn btn-primary">Cari</button>
-      </div>
+    <div class="col-md-3 mb-2">
+      <button type="submit" class="btn btn-primary">Cari</button>
     </div>
-  </form>
+  </div>
+</form>
+
   
   <!-- Tabel data pasien -->
   <table class="table table-striped">

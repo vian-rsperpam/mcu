@@ -116,7 +116,7 @@
   function printData(rm) {
     // You can implement your print logic here
     // For example, open a new window with printable content
-    window.open('print.php?nama=' + rm, '_blank');
+    window.open('print.php?rm=' + rm, '_blank');
   }
 </script>
 

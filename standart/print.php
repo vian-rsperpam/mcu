@@ -109,7 +109,7 @@ margin-left: 40px;
           $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM standart WHERE nama = '$nama'";
+          $sql = "SELECT * FROM standart WHERE rm = '$rm'";;
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -146,7 +146,7 @@ margin-left: 40px;
           $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM standart WHERE nama = '$nama'";
+          $sql = "SELECT * FROM standart WHERE rm = '$rm'";;
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {

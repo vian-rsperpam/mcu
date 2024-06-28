@@ -103,12 +103,13 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
           $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";
+          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";;
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -118,6 +119,8 @@ margin-left: 40px;
               echo "<tr><td><strong>No RM :</strong></td><td>" . $row["rm"] . "</td></tr>";
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
+              if (!empty($row["asuransi"])) {
+              echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";}
               echo "<tr><td><strong>Paket :</strong></td><td>" . $row["paket"] . "</td></tr>";
               echo "<tr><td><strong>Usia :</strong></td><td>" . $row["usia_tahun"] . " Tahun " . $row["usia_bulan"] . " Bulan</td></tr>";
             }
@@ -137,12 +140,13 @@ margin-left: 40px;
         <?php
           // Include the database connection file
           include ('koneksi.php');
+          include_once(__DIR__ . '/../function/value.php');
 
           // Get the name parameter from the URL
           $rm = isset($_GET['rm']) ? $_GET['rm'] : '';
 
           // Retrieve data from the table based on the provided name
-          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";
+          $sql = "SELECT * FROM tambahan WHERE rm = '$rm'";;
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
@@ -183,8 +187,9 @@ margin-left: 40px;
                <td style='font-size: 12px; font-weight: bold;'>Riwayat Penyakit Keluarga :</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["riwayatkeluarga"]) . "</td>
                    </tr>";}
-
-              echo "<tr><td><strong>Riwayat Kebiasaan :</strong></td><td>";
+                
+                   if (!empty($row["merokok"])) {
+              echo "<tr><td><strong>Riwayat Kebiasaan :</strong></td><td>";}
               if (!empty($row["merokok"])) {
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Merokok :</strong></td><td>"  . $row["merokok"] . "</td></tr>";}
               if (!empty($row["olahraga"])) {
@@ -202,14 +207,16 @@ margin-left: 40px;
                    </tr>";}
 
                //Pemeriksaan Fisiks
-               echo "<tr><td><strong>Antropometri</strong></td><td>";
+               if (!empty($row["berat_badan"])) {
+               echo "<tr><td><strong>Antropometri</strong></td><td>";}
                if (!empty($row["berat_badan"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Berat Badan :</strong></td><td>"  . $row["berat_badan"] . " Kg</td></tr>";}
                if (!empty($row["tinggi_badan"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Tinggi Badan :</strong></td><td>"  . $row["tinggi_badan"] . " cm</td></tr>";}
                echo "<tr><td>&emsp;&emsp;<strong>BMI :</strong></td><td>"  . $row["bmi_status"] . " </td></tr>";
-            
-               echo "<tr><td><strong>Tanda-tanda vital</strong></td><td>";
+              
+               if (!empty($row["tensi"])) {
+               echo "<tr><td><strong>Tanda-tanda vital</strong></td><td>";}
                if (!empty($row["tensi"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Tensi :</strong></td><td>"  . $row["tensi"] . " mmHg</td></tr>";}
                if (!empty($row["nadi"])) {
@@ -220,7 +227,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Suhu :</strong></td><td>"  . $row["suhu"] . " &deg C</td></tr>";}
 
                //Mata
-               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";
+               if (!empty($row["butawarna"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";}
                if (!empty($row["butawarna"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";}
                if (!empty($row["konjunctiva"])) {
@@ -231,7 +239,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Palpebra :</strong></td><td>"  . $row["palpebra"] . " </td></tr>";}
                if (!empty($row["refleks_cahaya"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Refleks Cahaya :</strong></td><td>"  . $row["refleks_cahaya"] . " </td></tr>";}
-               echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";
+               if (!empty($row["od"])) {
+               echo "<tr><td>&emsp;&emsp;<strong>Visus :</strong></td><td>";}
                if (!empty($row["od"])) {
               echo "<tr>
                <td style='font-size: 14px; font-weight: bold;'>OD:</td>
@@ -246,7 +255,8 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";}
 
               //Mulut
-               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MULUT</strong></td></tr>";
+               if (!empty($row["faring"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MULUT</strong></td></tr>";}
                if (!empty($row["faring"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Faring :</strong></td><td>"  . $row["faring"] . "</td></tr>";}
                if (!empty($row["tonsil"])) {
@@ -255,14 +265,16 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Gigi :</strong></td><td>"  . $row["gigi"] . " </td></tr>";
                
               //Leher
-               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LEHER</strong></td></tr>";
+               if (!empty($row["kgb"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LEHER</strong></td></tr>";}
                if (!empty($row["kgb"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran KGB :</strong></td><td>"  . $row["kgb"] . "</td></tr>";}
                if (!empty($row["tyroid"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Pembesaran Tyroid :</strong></td><td>"  . $row["tyroid"] . "</td></tr>";}
 
               //Telinga
-               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>TELINGA</strong></td></tr>";
+               if (!empty($row["tympani"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>TELINGA</strong></td></tr>";}
                if (!empty($row["tympani"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Membran Tympani :</strong></td><td>"  . $row["tympani"] . "</td></tr>";}
                if (!empty($row["prope"])) {
@@ -271,8 +283,9 @@ margin-left: 40px;
                echo "<tr><td>&emsp;&emsp;<strong>Infeksi :</strong></td><td>"  . $row["infeksi"] . "</td></tr>";}
 
                //Costovertebra
+               if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td colspan='2'><strong style='font-size: 16px;'>COSTROVERTEBRA</strong></td></tr>";
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>Jantung</strong></td></tr>";}
                if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";}
                if (!empty($row["auskultasi_jantung"])) {
@@ -280,8 +293,9 @@ margin-left: 40px;
                <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;Auskultasi:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["auskultasi_jantung"]) . "</td>
                    </tr>";}
-
-               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>PULMO</strong></td></tr>";
+              
+               if (!empty($row["perkusi"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 14px;'>PULMO</strong></td></tr>";}
                if (!empty($row["perkusi"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Perkusi :</strong></td><td>"  . $row["perkusi_pulmo"] . "</td></tr>";}
                if (!empty($row["auskultasi_pulmo"])) {
@@ -291,7 +305,8 @@ margin-left: 40px;
                    </tr>";}
 
                //Abdomen
-               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ABDOMEN</strong></td></tr>";
+               if (!empty($row["perkusi_jantung"])) {
+               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ABDOMEN</strong></td></tr>";}
                if (!empty($row["perkusi_jantung"])) {
                echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";}
                if (!empty($row["auskultasi_jantung"])) {
@@ -318,14 +333,16 @@ margin-left: 40px;
                    </tr>";}
 
               //Kulit
-              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>KULIT</strong></td></tr>";
+              if (!empty($row["tumor"])) {
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>KULIT</strong></td></tr>";}
               if (!empty($row["tumor"])) {
               echo "<tr><td>&emsp;&emsp;<strong>Tumor :</strong></td><td>"  . $row["tumor"] . "</td></tr>";}
               if (!empty($row["kelainan_kulit"])) {
               echo "<tr><td>&emsp;&emsp;<strong>Kelainan Kulit :</strong></td><td>"  . $row["kelainan_kulit"] . "</td></tr>";}
 
               //Laboratorium
-              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LABORATORIUM</strong></td></tr>";
+              if (!empty($row["hemoglobin"])) {
+              echo "<tr><td colspan='2'><strong style='font-size: 16px;'>LABORATORIUM</strong></td></tr>";}
 
               echo "<tr><td>&emsp;&emsp;<strong>a. Darah Lengkap :</strong></td><td>";
               if (!empty($row["hemoglobin"])) {
@@ -347,7 +364,8 @@ margin-left: 40px;
               if (!empty($row["mch"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 27.5 - 33.2 pg)</small></td></tr>";}
 
-              echo "<tr><td>&emsp;&emsp;<strong>b. Fungsi Hati :</strong></td><td>";
+              if (!empty($row["sgot"])) {
+              echo "<tr><td>&emsp;&emsp;<strong>b. Fungsi Hati :</strong></td><td>";}
               if (!empty($row["sgot"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>SGOT :</strong></td><td>"  . $row["sgot"] . " μ/L <strong>" . $sgot_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 5 - 40 μ/L)</small></td></tr>";}
               if (!empty($row["sgpt"])) {
@@ -361,7 +379,8 @@ margin-left: 40px;
               if (!empty($row["tg"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trigliserida :</strong></td><td>"  . $row["tg"] . " mg/dl <strong>" . $tg_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 150 mg/dl)</small></td></tr>";}
 
-              echo "<tr><td>&emsp;&emsp;<strong>c. Fungsi Ginjal :</strong></td><td>";
+              if (!empty($row["asam_urat"])) {
+              echo "<tr><td>&emsp;&emsp;<strong>c. Fungsi Ginjal :</strong></td><td>";}
               if (!empty($row["asam_urat"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Asam Urat Darah :</strong></td><td>"  . $row["asam_urat"] . " mg/dl <strong>" . $asamurat_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 2.5 - 7 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 1.5 - 6 mg/dL)</small></td></tr>";}
               if (!empty($row["ureum"])) {
@@ -369,13 +388,15 @@ margin-left: 40px;
               if (!empty($row["creatin"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Creatin :</strong></td><td>"  . $row["creatin"] . " mg/dl <strong>" . $creatin_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0.6 - 1.2 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 0.5 - 1.1 mg/dL)</small></td></tr>";}
 
-              echo "<tr><td>&emsp;&emsp;<strong>e. Gula Darah :</strong></td><td>";
+                if (!empty($row["glucosa_puasa"])) {
+              echo "<tr><td>&emsp;&emsp;<strong>e. Gula Darah :</strong></td><td>";}
               if (!empty($row["glucosa_puasa"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa Puasa :</strong></td><td>"  . $row["glucosa_puasa"] . " mg/dl <strong>" . $glucosapuasa_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 90 - 100 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 90 -100 mg/dL)</small></td></tr>";}
               if (!empty($row["glucosa_pp"])) {
                 echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa 2 Jam PP :</strong></td><td>"  . $row["glucosa_pp"] . " mg/dl <strong>" . $glucosapp_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 90 - 140 mg/dL)<br><br><br><br>(Nilai Normal Wanita: 90 -140 mg/dL)</small></td></tr>";}
-
-              echo "<tr><td>&emsp;&emsp;<strong>f. Imunoserologi :</strong></td><td>";
+              
+              if (!empty($row["urinalisa"])) {
+              echo "<tr><td>&emsp;&emsp;<strong>f. Imunoserologi :</strong></td><td>";}
               if (!empty($row["hbsag"])) {
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>HBsAG :</strong></td><td>"  . $row["hbsag"] . "";}
               if (!empty($row["urinalisa"])) {

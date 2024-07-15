@@ -2,15 +2,15 @@
 // Nilai normal hemoglobin untuk Laki-Laki dan wanita
 function getHemoglobinStatus($hemoglobin, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($hemoglobin >= 14 && $hemoglobin <= 18) {
+        if ($hemoglobin >= 13.2 && $hemoglobin <= 17.2) {
             return "Normal";
-        } elseif ($hemoglobin < 14) {
+        } elseif ($hemoglobin < 13.2) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($hemoglobin >= 12 && $hemoglobin <= 16) {
+        if ($hemoglobin >= 11.7 && $hemoglobin <= 15.5) {
             return "Normal";
         } elseif ($hemoglobin < 12) {
             return "Low";
@@ -23,17 +23,17 @@ function getHemoglobinStatus($hemoglobin, $jenis_kelamin) {
 // Nilai normal hematokrit untuk Laki-Laki dan wanita
 function getHematokritStatus($hematokrit, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($hematokrit >= 41 && $hematokrit <= 54) {
+        if ($hematokrit >= 40 && $hematokrit <= 52) {
             return "Normal";
-        } elseif ($hematokrit < 41) {
+        } elseif ($hematokrit < 40) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($hematokrit >= 38 && $hematokrit <= 46) {
+        if ($hematokrit >= 35 && $hematokrit <= 47) {
             return "Normal";
-        } elseif ($hematokrit< 38) {
+        } elseif ($hematokrit< 35) {
             return "Low";
         } else {
             return "High";
@@ -43,7 +43,7 @@ function getHematokritStatus($hematokrit, $jenis_kelamin) {
 
 // Nilai normal trombosit
 function getTrombositStatus($trombosit) {
-    if($trombosit >= 150000 && $trombosit <= 400000){
+    if($trombosit >= 150000 && $trombosit <= 440000){
         return "Normal";
     } elseif ($trombosit <150000){
         return "Low";
@@ -68,7 +68,7 @@ function getLeukositStatus($leukosit) {
 // Nilai normal LED untuk Laki-Laki dan wanita
 function getLedStatus($led, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($led >= 0 && $led <= 15) {
+        if ($led >= 0 && $led <= 10) {
             return "Normal";
         } elseif ($led < 0) {
             return "Low";
@@ -86,20 +86,82 @@ function getLedStatus($led, $jenis_kelamin) {
     }
 }
 
+//Basofil
+function getBasofilStatus($basofil) {
+    if($basofil >= 0 && $basofil <= 1){
+        return "Normal";
+    } elseif ($basofil <0){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//Eosinofil
+function getEosinofilStatus($eosinofil) {
+    if($eosinofil >= 1 && $eosinofil <= 3){
+        return "Normal";
+    } elseif ($eosinofil <1){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+
+//Neutrofil
+function getNeutrofilStatus($neutrofil) {
+    if($neutrofil >= 50 && $neutrofil <= 70){
+        return "Normal";
+    } elseif ($neutrofil <50){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//Limfosit
+function getLimfositStatus($limfosit) {
+    if($limfosit >= 25 && $limfosit <= 40){
+        return "Normal";
+    } elseif ($limfosit <25){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//Monosit
+function getMonositStatus($monosit) {
+    if($monosit >= 2 && $monosit <= 8){
+        return "Normal";
+    } elseif ($monosit <2){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+
 // Nilai normal eritrosit untuk Laki-Laki dan wanita
 function getEritrositStatus($eritrosit, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($eritrosit >= 4700000 && $eritrosit <= 6100000) {
+        if ($eritrosit >= 4400000 && $eritrosit <= 5900000) {
             return "Normal";
-        } elseif ($eritrosit < 4700000) {
+        } elseif ($eritrosit < 4400000) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($eritrosit >= 4200000 && $eritrosit <= 5400000) {
+        if ($eritrosit >= 3800000 && $eritrosit <= 5200000) {
             return "Normal";
-        } elseif ($eritrosit< 4200000) {
+        } elseif ($eritrosit< 3800000) {
             return "Low";
         } else {
             return "High";
@@ -121,9 +183,9 @@ function getMCVStatus($mcv) {
 
 //MCH
 function getMCHStatus($mch) {
-    if($mch >= 27.5 && $mch <= 33.2){
+    if($mch >= 26 && $mch <= 34){
         return "Normal";
-    } elseif ($mch <27.5){
+    } elseif ($mch <26){
         return "Low";
     } else {
         return "High";
@@ -143,11 +205,11 @@ function getMCHCStatus($mchc) {
     
 }
 
-//SGOT
-function getSGOTStatus($sgot) {
-    if($sgot >= 5 && $sgot <= 40){
+//RDW
+function getRDWStatus($rdw) {
+    if($rdw >= 1.5 && $rdw <= 14.5){
         return "Normal";
-    } elseif ($sgot <5){
+    } elseif ($rdw <32){
         return "Low";
     } else {
         return "High";
@@ -155,16 +217,46 @@ function getSGOTStatus($sgot) {
     
 }
 
-//SGPT
-function getSGPTStatus($sgpt) {
-    if($sgpt >= 7 && $sgpt <= 56){
-        return "Normal";
-    } elseif ($sgpt <7){
-        return "Low";
+//SGOT
+function getSGOTStatus($sgot, $jenis_kelamin) {
+    if ($jenis_kelamin == 'Laki-Laki') {
+        if ($sgot >= 0 && $sgot <= 50) {
+            return "Normal";
+        } elseif ($sgot < 0) {
+            return "Low";
+        } else {
+            return "High";
+        }
     } else {
-        return "High";
+        if ($sgot >= 0 && $sgot <= 35) {
+            return "Normal";
+        } elseif ($sgot < 0) {
+            return "Low";
+        } else {
+            return "High";
+        }
     }
-    
+}
+
+//SGPT
+function getSGPTStatus($sgpt, $jenis_kelamin) {
+    if ($jenis_kelamin == 'Laki-Laki') {
+        if ($sgpt >= 0 && $sgpt <= 50) {
+            return "Normal";
+        } elseif ($sgpt < 0) {
+            return "Low";
+        } else {
+            return "High";
+        }
+    } else {
+        if ($sgpt >= 0 && $sgpt <= 35) {
+            return "Normal";
+        } elseif ($sgpt < 0) {
+            return "Low";
+        } else {
+            return "High";
+        }
+    }
 }
 
 //Kolesterol
@@ -180,17 +272,29 @@ function getKolesterolStatus($kolesterol) {
 }
 
 //HDL
-function getHDLStatus($hdl) {
-    if ($hdl >= 60) {
-        return "Normal";
+function getHDLStatus($hdl, $jenis_kelamin) {
+    if ($jenis_kelamin == 'Laki-Laki') {
+        if ($hdl >= 31 && $hdl <= 63) {
+            return "Normal";
+        } elseif ($hdl < 0) {
+            return "Low";
+        } else {
+            return "High";
+        }
     } else {
-        return "Low";
+        if ($hdl >= 37 && $hdl <= 92) {
+            return "Normal";
+        } elseif ($hdl < 37) {
+            return "Low";
+        } else {
+            return "High";
+        }
     }
 }
 
 //LDL
 function getLDLStatus($ldl) {
-    if ($ldl <= 100) {
+    if ($ldl <= 130) {
         return "Normal";
     } else {
         return "High";
@@ -218,7 +322,7 @@ function getAsamuratStatus($asam_urat, $jenis_kelamin) {
             return "High";
         }
     } else {
-        if ($asam_urat >= 1.5 && $asam_urat <= 6) {
+        if ($asam_urat >= 1.5 && $asam_urat <= 7) {
             return "Normal";
         } elseif ($asam_urat < 1.5) {
             return "Low";
@@ -231,17 +335,17 @@ function getAsamuratStatus($asam_urat, $jenis_kelamin) {
 //Ureum
 function getUreumStatus($ureum, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($ureum >= 8 && $ureum <= 24) {
+        if ($ureum >= 20 && $ureum <= 40) {
             return "Normal";
-        } elseif ($ureum < 8) {
+        } elseif ($ureum < 20) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($ureum >= 6 && $ureum <= 21) {
+        if ($ureum >= 20 && $ureum <= 40) {
             return "Normal";
-        } elseif ($ureum < 6) {
+        } elseif ($ureum < 20) {
             return "Low";
         } else {
             return "High";
@@ -252,7 +356,7 @@ function getUreumStatus($ureum, $jenis_kelamin) {
 //Creatin
 function getCreatinStatus($creatin, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($creatin >= 0.6 && $creatin <= 1.2) {
+        if ($creatin >= 0.6 && $creatin <= 1.5) {
             return "Normal";
         } elseif ($creatin < 0.6) {
             return "Low";
@@ -260,9 +364,9 @@ function getCreatinStatus($creatin, $jenis_kelamin) {
             return "High";
         }
     } else {
-        if ($creatin >= 0.5 && $creatin <= 1.1) {
+        if ($creatin >= 0.6 && $creatin <= 1.5) {
             return "Normal";
-        } elseif ($creatin < 0.5) {
+        } elseif ($creatin < 0.6) {
             return "Low";
         } else {
             return "High";
@@ -270,20 +374,200 @@ function getCreatinStatus($creatin, $jenis_kelamin) {
     }
 }
 
+//Kimia Urin
+//Berat Jenis
+function getBeratjenisStatus($beratjenis) {
+    if($beratjenis >= 1003 && $beratjenis <= 1030){
+        return "Normal";
+    } elseif ($beratjenis <1003){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//pH
+function getPHStatus($ph) {
+    if($ph >= 4.8 && $ph <= 7.4){
+        return "Normal";
+    } elseif ($ph <4.8){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//protein
+function getProtenStatus($protein) {
+    if($protein == "Negatif" || $protein == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Glucosaurin
+function getGlukosaurinStatus($glukosaurin) {
+    if($glukosaurin == "Negatif" || $glukosaurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Bilirubin
+function getBilirubinStatus($bilirubin) {
+    if($bilirubin == "Negatif" || $bilirubin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//keton
+function getKetonStatus($keton) {
+    if($keton == "Negatif" || $keton == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Urobilinogen
+function getUrobilinogenStatus($urobilinogen) {
+    if($urobilinogen <= 0.1){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//darahurin
+function getDarahurinStatus($darahurin) {
+    if($darahurin == "Negatif" || $darahurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//glukosa urin
+function getglucosaurinStatus($glucosaurin) {
+    if($glucosaurin == "Negatif" || $glucosaurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//nitrit
+function getNitritStatus($nitrit) {
+    if($nitrit == "Negatif" || $nitrit == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Sedimen Urin
+//Epitel
+function getEpitelStatus($epitel) {
+    if($epitel == "Positif" || $epitel == "positif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Eritrositurin
+function getEritrositurinStatus($eritrositurin) {
+    if($eritrositurin >= 0 && $eritrositurin <= 2){
+        return "Normal";
+        } elseif($eritrositurin < 0){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//Leukositurin
+function getLeukositurinStatus($leukositurin) {
+    if($leukositurin >= 0 && $leukositurin <= 2){
+        return "Normal";
+        } elseif($leukositurin < 0){
+        return "Low";
+    } else {
+        return "High";
+    }
+    
+}
+
+//Silinder Urin
+function getSilinderurinStatus($silinderurin) {
+    if($silinderurin == "Negatif" || $silinderurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Kristal Urin
+function getKristalurinStatus($kristalurin) {
+    if($kristalurin == "Negatif" || $kristalurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Bakteri Urin
+function getBakteriurinStatus($bakteriurin) {
+    if($bakteriurin == "Negatif" || $bakteriurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Lain-lain
+function getlainStatus($lain) {
+    if($lain == "Negatif" || $lain == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
 //Glucosa Puasa
 function getGlucosapuasaStatus($glucosa_puasa, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($glucosa_puasa >= 90 && $glucosa_puasa <= 100) {
+        if ($glucosa_puasa >= 80 && $glucosa_puasa <= 100) {
             return "Normal";
-        } elseif ($glucosa_puasa < 90) {
+        } elseif ($glucosa_puasa < 80) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($glucosa_puasa >= 90 && $glucosa_puasa <= 100) {
+        if ($glucosa_puasa >= 80 && $glucosa_puasa <= 100) {
             return "Normal";
-        } elseif ($glucosa_puasa < 90) {
+        } elseif ($glucosa_puasa < 80) {
             return "Low";
         } else {
             return "High";
@@ -294,17 +578,17 @@ function getGlucosapuasaStatus($glucosa_puasa, $jenis_kelamin) {
 //Glucosa 2 jam
 function getGlucosappStatus($glucosa_pp, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($glucosa_pp >= 90 && $glucosa_pp <= 140) {
+        if ($glucosa_pp >= 80 && $glucosa_pp <= 140) {
             return "Normal";
-        } elseif ($glucosa_pp < 90) {
+        } elseif ($glucosa_pp < 80) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($glucosa_pp >= 90 && $glucosa_pp <= 140) {
+        if ($glucosa_pp >= 80 && $glucosa_pp <= 140) {
             return "Normal";
-        } elseif ($glucosa_pp < 90) {
+        } elseif ($glucosa_pp < 80) {
             return "Low";
         } else {
             return "High";
@@ -314,7 +598,7 @@ function getGlucosappStatus($glucosa_pp, $jenis_kelamin) {
 
 //GDS
 function getGDSStatus($gds) {
-    if($gds >= 70 && $gds <= 200){
+    if($gds >= 70 && $gds <= 140){
         return "Normal";
     } elseif ($gds <70){
         return "Low";
@@ -324,14 +608,81 @@ function getGDSStatus($gds) {
     
 }
 
-//Urinalisa
-function getUrinalisaStatus($urinalisa) {
-    if($urinalisa >= 5 && $urinalisa <= 8){
+//Urinalisa Makroskopik
+function getWarnaStatus($warna) {
+    if ($warna == "Kuning" || $warna == "kuning") {
         return "Normal";
-    } elseif ($urinalisa <5){
-        return "Low";
     } else {
-        return "High";
+        return "ALERT!";
+    }
+}
+
+//Urinalisa Makroskopik
+function getKejernihanStatus($kejernihan) {
+    if ($kejernihan == "Jernih" || $kejernihan == "jernih") {
+        return "Normal";
+    } else {
+        return "ALERT!";
+    }
+}
+
+//NAPZA
+//Amfetamin
+function getAmpfetaminStatus($amfetamin) {
+    if($amfetamin == "Negatif" || $amfetamin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Amfetamin
+function getMetampfetaminStatus($metamfetamin) {
+    if($metamfetamin == "Negatif" || $metamfetamin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Canabis
+function getCanabisStatus($canabis) {
+    if($canabis == "Negatif" || $canabis == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Morfin
+function getMorfinStatus($morfin) {
+    if($morfin == "Negatif" || $morfin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Kokain
+function getKokainStatus($kokain) {
+    if($kokain == "Negatif" || $kokain == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+
+//Benzo
+function getBenzodiazepinStatus($benzodiazepin) {
+    if($benzodiazepin == "Negatif" || $benzodiazepin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
     }
     
 }

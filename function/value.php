@@ -400,7 +400,7 @@ function getPHStatus($ph) {
 }
 
 //protein
-function getProtenStatus($protein) {
+function getProteinStatus($protein) {
     if($protein == "Negatif" || $protein == "negatif"){
         return "";
     } else {
@@ -491,10 +491,11 @@ function getEpitelStatus($epitel) {
 }
 
 //Eritrositurin
-function getEritrositurinStatus($eritrositurin) {
-    if($eritrositurin >= 0 && $eritrositurin <= 2){
+
+function getEritrositsedimenStatus($eritrositsedimen) {
+    if($eritrositsedimen >= 0 && $eritrositsedimen <= 2){
         return "Normal";
-        } elseif($eritrositurin < 0){
+        } elseif($eritrositsedimen < 0){
         return "Low";
     } else {
         return "High";
@@ -504,9 +505,17 @@ function getEritrositurinStatus($eritrositurin) {
 
 //Leukositurin
 function getLeukositurinStatus($leukositurin) {
-    if($leukositurin >= 0 && $leukositurin <= 2){
+    if($leukositurin == "Negatif" || $leukositurin == "negatif"){
+        return "";
+    } else {
+        return "ALERT!";
+    }
+    
+}
+function getLeukositsedimenStatus($leukositsedimen) {
+    if($leukositsedimen >= 0 && $leukositsedimen <= 2){
         return "Normal";
-        } elseif($leukositurin < 0){
+        } elseif($leukositsedimen < 0){
         return "Low";
     } else {
         return "High";
@@ -604,6 +613,16 @@ function getGDSStatus($gds) {
         return "Low";
     } else {
         return "High";
+    }
+    
+}
+
+//HBSAG
+function getHBSAGStatus($hbsag) {
+    if($hbsag == "Non Reaktif" || $hbsag == "non reaktif"){
+        return "";
+    } else {
+        return "ALERT!";
     }
     
 }

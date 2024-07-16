@@ -282,7 +282,7 @@ margin-left: 40px;
               echo "<br><br><br><br><br><small>(Nilai Normal Pria : 0 dan 15  mm/jam)";
               echo "<br><br><br><br><br>(Nilai Normal Waninita : 0 dan 20 mm/jam)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . "";
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis :</strong></td><td>"  . $row["hitung_jenis"] . "";
+              
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl";
               echo "<br><br><br><br><br><small>(Normal : 80 - 100 fl)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg";

@@ -340,10 +340,16 @@
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50 - 100 10³  μL)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam <strong>" . $led_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0 - 10 mm/jam)<br><br><br><br>(Nilai Normal Wanita: 0 - 20 mm/jam)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . " μL <strong>" . $eritrosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 4.4 - 5.9 juta/μL)<br><br><br><br>(Nilai Normal Wanita: 3.8 - 5.2 juta/μL)</small></td></tr>";
-            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis :</strong></td><td>"  . $row["hitung_jenis"] . "";
+            
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl <strong>" . $mcv_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 80 - 100 fl)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 26 - 34 pg)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCHC :</strong></td><td>"  . $row["mchc"] . " g/dl <strong>" . $mchc_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 32 - 36 g/dl)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis </strong></td><td>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Basofil :</strong></td><td>"  . $row["basofil"] . " % <strong>" . $basofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 0 - 1 %)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eosinofil :</strong></td><td>"  . $row["eosinofil"] . " % <strong>" . $eosinofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 1 - 3 %)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Neutrofil :</strong></td><td>"  . $row["neutrofil"] . " % <strong>" . $neutrofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50 -70 %)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Limfosit :</strong></td><td>"  . $row["limfosit"] . " % <strong>" . $limfosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 25 - 40 %)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Monosit :</strong></td><td>"  . $row["monosit"] . " pg <strong>" . $monosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 2 - 8 %)</small></td></tr>";
 
             echo "<tr><td>&emsp;&emsp;<strong>b. Gula Darah Sewaktu :</strong></td><td>" . $row["gds"] . " mg/dl <strong>" . $gds_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 140 mg/dl)</small></td></tr>";
 

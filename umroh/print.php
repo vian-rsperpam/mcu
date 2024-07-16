@@ -269,13 +269,13 @@ margin-left: 40px;
 
               echo "<tr><td>&emsp;&emsp;<strong>a. Darah Lengkap :</strong></td><td>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hemoglobin :</strong></td><td>"  . $row["hemoglobin"] . " g/dl";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 14 - 18g/dL)";
+              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 13.2 - 11.75g/dL)";
               echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hematokrit :</strong></td><td>"  . $row["hematokrit"] . " %";
-              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 41 - 54%)";
-              echo "<br><br><br><br><br>(Nilai Normal Wanita : 38 - 46%)";
+              echo "<br><br><br><br><br><small>(Nilai Normal Pria : 40 - 52%)";
+              echo "<br><br><br><br><br>(Nilai Normal Wanita : 35 - 47%)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trombosit :</strong></td><td>"  . $row["trombosit"] . " μL";
-              echo "<br><br><br><br><br><small>(Normal : 150.000 - 400.000 μL)";
+              echo "<br><br><br><br><br><small>(Normal : 150 - 400 10³  μL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL";
               echo "<br><br><br><br><br><small>(Normal : 50.000 - 10.000 μL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam";
@@ -290,19 +290,19 @@ margin-left: 40px;
 
               echo "<tr><td>&emsp;&emsp;<strong>a. Lemak Darah :</strong></td><td>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol Total :</strong></td><td>"  . $row["kolesterol"] . " mg/dl";
-              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 14 - 18g/dL)";
+              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 13.2 - 11.75g/dL)";
               // echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol HDL :</strong></td><td>"  . $row["hdl"] . " mg/dl";
-              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 41 - 54%)";
-              // echo "<br><br><br><br><br>(Nilai Normal Wanita : 38 - 46%)";
+              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 40 - 52%)";
+              // echo "<br><br><br><br><br>(Nilai Normal Wanita : 35 - 47%)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kolesterol LDL :</strong></td><td>"  . $row["ldl"] . " mg/dl";
-              // echo "<br><br><br><br><br><small>(Normal : 150.000 - 400.000 μL)";
+              // echo "<br><br><br><br><br><small>(Normal : 150 - 400 10³  μL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Trigliserida :</strong></td><td>"  . $row["trigliserida"] . " mg/dl";
               // echo "<br><br><br><br><br><small>(Normal : 50.000 - 10.000 μL)";
 
               echo "<tr><td>&emsp;&emsp;<strong>b. Glukosa Darah :</strong></td><td>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glukosa Puasa :</strong></td><td>"  . $row["glukosa_puasa"] . " mg/dl";
-              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 14 - 18g/dL)";
+              // echo "<br><br><br><br><br><small>(Nilai Normal Pria : 13.2 - 11.75g/dL)";
               // echo "<br><br><br><br><br>(Nilai Normal Wanita : 12 -16g/dL)";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glukosa 2 Jam PP :</strong></td><td>"  . $row["glukosa_pp"] . " mg/dl";
 

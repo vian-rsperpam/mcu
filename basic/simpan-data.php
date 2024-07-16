@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $obat = $_POST['obat'];
     $olahraga = $_POST['olahraga'];
     $jenis_olahraga = $_POST['jenis_olahraga'];
-    $riwayatalergi = $_POST['riwayatalergi'];
     $alergi = nl2br($_POST['alergi']);
     $perkusi_jantung = $_POST['perkusi'];
     $auskultasi_jantung = nl2br($_POST['jantung-auskultasi']);
@@ -67,28 +66,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $leukosit = $_POST["leukosit"];
     $led = $_POST["led"];
     $eritrosit = $_POST["eritrosit"];
-    $hitung_jenis = $_POST["hitung-jenis"];
+    $basofil = $_POST["basofil"];
+    $eosinofil = $_POST["eosinofil"];
+    $neutrofil = $_POST["neutrofil"];
+    $limfosit = $_POST["limfosit"];
+    $monosit = $_POST["monosit"];
     $mcv = $_POST["MCV"];
     $mch = $_POST["MCH"];
     $mchc = $_POST["MCHC"];
     $gds = $_POST["gds"];
-    $urinalisa = $_POST["urinalisa"];
+    $warna = $_POST['warna'];
+    $kejernihan = $_POST['kejernihan'];
+    $beratjenis =$_POST['beratjenis'];
+    $ph = $_POST['ph'];
+    $protein = $_POST['protein'];
+    $glucosaurin = $_POST['glucosaurin'];
+    $keton = $_POST['keton'];
+    $bilirubin = $_POST['bilirubin'];
+    $urobilinogen = $_POST['urobilinogen'];
+    $darahurin = $_POST['darahurin'];
+    $leukositurin = $_POST['leukositurin'];
+    $nitrit = $_POST['nitrit'];
     $thorax = nl2br($_POST['thorax']);
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
 
     // Prepare SQL statement with placeholders
     $sql = "INSERT INTO basic (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
-                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, riwayatalergi, alergi,
+                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
-                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, mchc, gds, urinalisa,
+                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, mcv, mch, mchc, gds, rdw, basofil, eosinofil, neutrofil, limfosit,
+                                warna, kejernihan, beratjenis, ph, proteinurin, glucosaurin, keton, bilirubin, urobilinogen, darahurin, leukositurin, nitrit,
                                 thorax, kesan, anjuran)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
-                      '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
+                      '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                       '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                       '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                      '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$mchc', '$gds', '$urinalisa',
+                      '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$mcv', '$mch', '$mchc', '$gds',
+                      '$basofil', '$eosinofil', '$neutrofil', '$limfosit', '$monosit',
+                      '$warna', '$kejernihan', '$beratjenis', '$ph', '$protein', '$glucosaurin', '$keton', '$bilirubin', '$urobilinogen', '$darahurin', '$leukositurin', '$nitrit',
                       '$thorax', '$kesan', '$anjuran')";
 
 if ($conn->query($sql) === TRUE) {

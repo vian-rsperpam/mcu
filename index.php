@@ -91,6 +91,7 @@ $conn->close();
         <a href="./kartap/index.php">Karyawan Tetap</a>
         <a href="./tambahan/index.php">Tambahan</a>
         <a href="./custom/index.php">Custom</a>
+        <a href="./narkoba/index.php">Tes Narkoba</a>
         <a href="logout.php">Logout</a>
     </div>
     <h2 class="welcome-text">Selamat datang, <?php echo $_SESSION['username']; ?>!</h2>

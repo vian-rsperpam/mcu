@@ -513,16 +513,13 @@ function getLeukositurinStatus($leukositurin) {
     
 }
 function getLeukositsedimenStatus($leukositsedimen) {
-    if($leukositsedimen >= 0 && $leukositsedimen <= 2){
-        return "Normal";
-        } elseif($leukositsedimen < 0){
-        return "Low";
+    if($leukositsedimen == "Negatif" || $leukositsedimen == "negatif"){
+        return "";
     } else {
-        return "High";
+        return "ALERT!";
     }
     
 }
-
 //Silinder Urin
 function getSilinderurinStatus($silinderurin) {
     if($silinderurin == "Negatif" || $silinderurin == "negatif"){
@@ -657,7 +654,7 @@ function getAmpfetaminStatus($amfetamin) {
 }
 
 //Amfetamin
-function getMetampfetaminStatus($metamfetamin) {
+function getMetamfetaminStatus($metamfetamin) {
     if($metamfetamin == "Negatif" || $metamfetamin == "negatif"){
         return "";
     } else {
@@ -667,8 +664,8 @@ function getMetampfetaminStatus($metamfetamin) {
 }
 
 //Canabis
-function getCanabisStatus($canabis) {
-    if($canabis == "Negatif" || $canabis == "negatif"){
+function getThcStatus($thc) {
+    if($thc == "Negatif" || $thc == "negatif"){
         return "";
     } else {
         return "ALERT!";

@@ -39,7 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $leukosit = $_POST['leukosit'];
     $led = $_POST['led'];
     $eritrosit = $_POST['eritrosit'];
-    $hitung_jenis = $_POST['hitung-jenis'];
+    $basofil = $_POST["basofil"];
+    $eosinofil = $_POST["eosinofil"];
+    $neutrofil = $_POST["neutrofil"];
+    $limfosit = $_POST["limfosit"];
+    $monosit = $_POST["monosit"];
     $mcv = $_POST['MCV'];
     $mch = $_POST['MCH'];
     $gds = $_POST['gds'];

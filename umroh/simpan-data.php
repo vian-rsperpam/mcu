@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $obat = $_POST['obat'];
     $olahraga = $_POST['olahraga'];
     $jenis_olahraga = $_POST['jenis_olahraga'];
-    $riwayatalergi = $_POST['riwayatalergi'];
     $alergi = nl2br($_POST['alergi']);
     $perkusi_jantung = $_POST['perkusi'];
     $auskultasi_jantung = nl2br($_POST['jantung-auskultasi']);
@@ -67,7 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $leukosit = $_POST["leukosit"];
     $led = $_POST["led"];
     $eritrosit = $_POST["eritrosit"];
-    $hitung_jenis = $_POST["hitung-jenis"];
+    $basofil = $_POST["basofil"];
+    $eosinofil = $_POST["eosinofil"];
+    $neutrofil = $_POST["neutrofil"];
+    $limfosit = $_POST["limfosit"];
+    $monosit = $_POST["monosit"];
+    $eritrosit = $_POST["eritrosit"];
     $mcv = $_POST["MCV"];
     $mch = $_POST["MCH"];
     $kolesterol = $_POST['kolesterol'];
@@ -83,17 +87,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
     $sql = "INSERT INTO umroh   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
-                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, riwayatalergi, alergi,
+                                keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
-                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, hitung_jenis, mcv, mch, kolesterol, hdl, ldl, trigliserida, 
+                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, mcv, mch, basofil, eosinofil, neutrofil, limfosit, monosit, kolesterol, hdl, ldl, trigliserida, 
                                 glukosa_puasa, glukosa_pp, gol_darah,
                                 thorax, kesan, anjuran)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
-                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$riwayatalergi', '$alergi',
+                    '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
+                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$mcv', '$mch', '$basofil', '$eosinofil', '$neutrofil', '$limfosit', '$monosit', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
                     '$glukosa_puasa', '$glukosa_pp', '$gol_darah',
                     '$thorax','$kesan','$anjuran')";
 

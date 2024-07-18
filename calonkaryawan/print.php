@@ -163,8 +163,24 @@ margin-left: 40px;
               $eritrosit_status = geteritrositStatus($row["eritrosit"], $row["jenis_kelamin"]);
               $mcv_status = getMCVStatus($row["mcv"]);
               $mch_status = getMCHStatus($row["mch"]);
+              $basofil_status =getBasofilStatus($row["basofil"]);
+              $eosinofil_status =getEosinofilStatus($row["eosinofil"]);
+              $neutrofil_status= getNeutrofilStatus($row["neutrofil"]);
+              $limfosit_status = getLimfositStatus($row["limfosit"]);
+              $monosit_status = getMonositStatus($row["monosit"]);
               $gds_status = getGDSStatus($row["gds"]);
-              $urinalisa_status = getUrinalisaStatus($row["urinalisa"]);
+              $warna_status = getWarnaStatus($row["warna"]);
+              $kejernihan_status = getKejernihanStatus($row["kejernihan"]);
+              $beratjenis_status = getBeratjenisStatus($row["beratjenis"]);
+              $ph_status = getPHStatus($row["ph"]);
+              $protein_status = getProteinStatus($row["proteinurin"]);
+              $glucosaurin_status = getglucosaurinStatus($row["glucosaurin"]);
+              $keton_status = getKetonStatus($row["keton"]);
+              $bilirubin_status = getBilirubinStatus($row["bilirubin"]);
+              $urobilinogen_satatus = getUrobilinogenStatus($row["urobilinogen"]);
+              $darahurin_status = getDarahurinStatus($row["darahurin"]);
+              $leukositurin_status = getLeukositurinStatus($row["leukositurin"]);
+              $nitrit_status = getNitritStatus($row["nitrit"]);
               //anamnesa
               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ANAMNESA</strong></td></tr>";
               echo "<tr>
@@ -291,10 +307,27 @@ margin-left: 40px;
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl <strong>" . $mcv_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 80 - 100 fl)</small></td></tr>";
               echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 26 - 34 pg)</small></td></tr>";
 
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Hitung Jenis </strong></td><td>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Basofil :</strong></td><td>"  . $row["basofil"] . " % <strong>" . $basofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 0 - 1 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eosinofil :</strong></td><td>"  . $row["eosinofil"] . " % <strong>" . $eosinofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 1 - 3 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Neutrofil :</strong></td><td>"  . $row["neutrofil"] . " % <strong>" . $neutrofil_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50 -70 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Limfosit :</strong></td><td>"  . $row["limfosit"] . " % <strong>" . $limfosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 25 - 40 %)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Monosit :</strong></td><td>"  . $row["monosit"] . " pg <strong>" . $monosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 2 - 8 %)</small></td></tr>";
               echo "<tr><td>&emsp;&emsp;<strong>b. Gula Darah Sewaktu :</strong></td><td>" . $row["gds"] . " mg/dl <strong>" . $gds_status . "</strong><br><br><br><br><br><small>(Nilai Normal : < 140 mg/dl)</small></td></tr>";
 
-              echo "<tr><td>&emsp;&emsp;<strong>c. Urinalisa :</strong></td><td>" . $row["urinalisa"] . " pH <strong>" . $urinalisa_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 5 - 8 pH)</small></td></tr>";
-              //thorax
+              echo "<tr><td>&emsp;&emsp;<strong>c. Urinalisa :</strong></td><td>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Warna :</strong></td><td>"  . $row["warna"] . "  <strong>" . $warna_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Kuning)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Kejernihan :</strong></td><td>"  . $row["kejernihan"] . "  <strong>" . $kejernihan_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Jernih)</small></td></tr>";
+
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Berat Jenis :</strong></td><td>"  . $row["beratjenis"] . "  <strong>" . $beratjenis_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 1.003 - 1.030)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>pH :</strong></td><td>"  . $row["ph"] . "  <strong>" . $ph_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 4.8 - 7.4)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Protein :</strong></td><td>"  . $row["proteinurin"] . "  <strong>" . $protein_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glukosa :</strong></td><td>"  . $row["glucosaurin"] . "  <strong>" . $glucosaurin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Keton :</strong></td><td>"  . $row["keton"] . "  <strong>" . $keton_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Bilirubin :</strong></td><td>"  . $row["bilirubin"] . "  <strong>" . $bilirubin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Darah :</strong></td><td>"  . $row["darahurin"] . "  <strong>" . $darahurin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukositurin"] . "  <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Nitrit :</strong></td><td>"  . $row["nitrit"] . "  <strong>" . $nitrit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
               echo "<tr>
               <td style='font-size: 16px; font-weight: bold;'>RONTGEN THORAX:</td>
                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["thorax"]) . "</td>

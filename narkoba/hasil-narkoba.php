@@ -34,7 +34,7 @@
   <div class="dropdown-divider"></div>
   <a class="dropdown-item" href="/mcu/tambahan/hasil-tambahan.php">Tambahan</a>
   <a class="dropdown-item" href="/mcu/custom/hasil-custom.php">Custom</a>
-  <a class="dropdown-item" href="/mcu/custom/hasil-narkoba.php">Tes Narkoba</a>
+  <a class="dropdown-item" href="/mcu/narkoba/hasil-narkoba.php">Tes Narkoba</a>
 </div>
 </div>
 <a href="/mcu/index.php" class="btn btn-primary ml-2">Home</a>

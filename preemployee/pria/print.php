@@ -354,7 +354,7 @@
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Keton :</strong></td><td>"  . $row["keton"] . "  <strong>" . $keton_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Bilirubin :</strong></td><td>"  . $row["bilirubin"] . "  <strong>" . $bilirubin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Darah :</strong></td><td>"  . $row["darahurin"] . "  <strong>" . $darahurin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
-            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukositurin"] . "  <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
+            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukositurin"] . "  <strong>" . $leukositurin_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Nitrit :</strong></td><td>"  . $row["nitrit"] . "  <strong>" . $nitrit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : Negatif)</small></td></tr>";
 
             //thorax

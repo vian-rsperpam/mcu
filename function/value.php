@@ -459,6 +459,9 @@ function getDarahurinStatus($darahurin) {
     
 }
 
+//darahurin
+
+
 //glukosa urin
 function getglucosaurinStatus($glucosaurin) {
     if($glucosaurin == "Negatif" || $glucosaurin == "negatif"){

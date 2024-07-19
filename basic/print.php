@@ -100,6 +100,24 @@
       /* margin-left: 420px */
 
     }
+
+        table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    td {
+        padding: 8px;
+        vertical-align: top;
+    }
+    td.label {
+        width: 30%;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 10px;
+    }
+    td.value {
+        width: 70%;
+    }
   </style>
 </head>
 
@@ -142,7 +160,8 @@
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
               if (!empty($row["asuransi"])) {
-              echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";}
+                echo "<tr><td><strong>Asuransi :</strong></td><td>" . $row["asuransi"] . "</td></tr>";
+              }
               echo "<tr><td><strong>Paket :</strong></td><td>" . $row["paket"] . "</td></tr>";
               echo "<tr><td><strong>Usia :</strong></td><td>" . $row["usia_tahun"] . " Tahun " . $row["usia_bulan"] . " Bulan</td></tr>";
             }
@@ -183,9 +202,9 @@
             $mch_status = getMCHStatus($row["mch"]);
             $mchc_status = getMCHCStatus($row["mchc"]);
             $rdw_status = getRDWStatus($row["rdw"]);
-            $basofil_status =getBasofilStatus($row["basofil"]);
-            $eosinofil_status =getEosinofilStatus($row["eosinofil"]);
-            $neutrofil_status= getNeutrofilStatus($row["neutrofil"]);
+            $basofil_status = getBasofilStatus($row["basofil"]);
+            $eosinofil_status = getEosinofilStatus($row["eosinofil"]);
+            $neutrofil_status = getNeutrofilStatus($row["neutrofil"]);
             $limfosit_status = getLimfositStatus($row["limfosit"]);
             $monosit_status = getMonositStatus($row["monosit"]);
             $gds_status = getGDSStatus($row["gds"]);
@@ -342,7 +361,7 @@
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Leukosit :</strong></td><td>"  . $row["leukosit"] . " μL <strong>" . $leukosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 50 - 100 10³  μL)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>LED :</strong></td><td>"  . $row["led"] . " mm/jam <strong>" . $led_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 0 - 10 mm/jam)<br><br><br><br>(Nilai Normal Wanita: 0 - 20 mm/jam)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Eritrosit :</strong></td><td>"  . $row["eritrosit"] . " μL <strong>" . $eritrosit_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 4.4 - 5.9 juta/μL)<br><br><br><br>(Nilai Normal Wanita: 3.8 - 5.2 juta/μL)</small></td></tr>";
-            
+
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCV :</strong></td><td>"  . $row["mcv"] . " fl <strong>" . $mcv_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 80 - 100 fl)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCH :</strong></td><td>"  . $row["mch"] . " pg <strong>" . $mch_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 26 - 34 pg)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>MCHC :</strong></td><td>"  . $row["mchc"] . " g/dl <strong>" . $mchc_status . "</strong><br><br><br><br><br><small>(Nilai Normal : 32 - 36 g/dl)</small></td></tr>";

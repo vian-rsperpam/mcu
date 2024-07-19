@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include ('koneksi.php');
+include('koneksi.php');
 
 // Check if the form data is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
 
-   
+
     $sql = "INSERT INTO umroh   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
@@ -101,19 +101,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     '$glukosa_puasa', '$glukosa_pp', '$gol_darah',
                     '$thorax','$kesan','$anjuran')";
 
-if ($conn->query($sql) === TRUE) {
-    // Close the database connection
-    $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        // Close the database connection
+        $conn->close();
 
-    // Redirect to anamnesa.html
-    header("Location: /mcu/index.php ");
+        // Redirect to anamnesa.html
+        header("Location: /mcu/index.php ");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} else {
+    // If the form data is not submitted through POST method, redirect to the form page
+    header("Location: your_form_page.php");
     exit();
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-} else {
-// If the form data is not submitted through POST method, redirect to the form page
-header("Location: your_form_page.php");
-exit();
-}
-?>

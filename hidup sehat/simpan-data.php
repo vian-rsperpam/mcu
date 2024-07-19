@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include ('koneksi.php');
+include('koneksi.php');
 
 // Check if the form data is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,9 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $creatin = $_POST['creatin'];
     $sgot = $_POST['sgot'];
     $sgpt = $_POST['sgpt'];
-   
 
-   
+
+
     $sql = "INSERT INTO hidup_sehat     (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                         keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                         berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, hasil_konsul, hemoglobin, hematokrit, trombosit, leukosit, led, 
@@ -74,19 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     '$kolesterol', '$hdl', '$ldl', '$tg', '$glukosa_puasa', '$hba1c', 
                     '$asam_urat', '$ureum', '$creatin', '$sgot', '$sgpt')";
 
-if ($conn->query($sql) === TRUE) {
-    // Close the database connection
-    $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        // Close the database connection
+        $conn->close();
 
-    // Redirect to anamnesa.html
-    header("Location: /mcu/hidup sehat/hasil-hidupsehat.php");
+        // Redirect to anamnesa.html
+        header("Location: /mcu/hidup sehat/hasil-hidupsehat.php");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} else {
+    // If the form data is not submitted through POST method, redirect to the form page
+    header("Location: your_form_page.php");
     exit();
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-} else {
-// If the form data is not submitted through POST method, redirect to the form page
-header("Location: your_form_page.php");
-exit();
-}
-?>

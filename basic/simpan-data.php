@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include ('koneksi.php');
+include('koneksi.php');
 
 // Check if the form data is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gds = $_POST["gds"];
     $warna = $_POST['warna'];
     $kejernihan = $_POST['kejernihan'];
-    $beratjenis =$_POST['beratjenis'];
+    $beratjenis = $_POST['beratjenis'];
     $ph = $_POST['ph'];
     $protein = $_POST['protein'];
     $glucosaurin = $_POST['glucosaurin'];
@@ -108,19 +108,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       '$warna', '$kejernihan', '$beratjenis', '$ph', '$protein', '$glucosaurin', '$keton', '$bilirubin', '$urobilinogen', '$darahurin', '$leukositurin', '$nitrit',
                       '$thorax', '$kesan', '$anjuran')";
 
-if ($conn->query($sql) === TRUE) {
-    // Close the database connection
-    $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        // Close the database connection
+        $conn->close();
 
-    // Redirect to anamnesa.html
-    header("Location: /mcu/index.php ");
+        // Redirect to anamnesa.html
+        header("Location: /mcu/index.php ");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} else {
+    // If the form data is not submitted through POST method, redirect to the form page
+    header("Location: your_form_page.php");
     exit();
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-} else {
-// If the form data is not submitted through POST method, redirect to the form page
-header("Location: your_form_page.php");
-exit();
-}
-?>

@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include ('koneksi.php');
+include('koneksi.php');
 
 // Check if the form data is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gds = $_POST["gds"];
     $warna = $_POST['warna'];
     $kejernihan = $_POST['kejernihan'];
-    $beratjenis =$_POST['beratjenis'];
+    $beratjenis = $_POST['beratjenis'];
     $ph = $_POST['ph'];
     $protein = $_POST['protein'];
     $glucosaurin = $_POST['glucosaurin'];
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
 
-   
+
     $sql = "INSERT INTO calonkaryawan   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
@@ -106,19 +106,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     '$warna', '$kejernihan', '$beratjenis', '$ph', '$protein', '$glucosaurin', '$keton', '$bilirubin', '$urobilinogen', '$darahurin', '$leukositurin', '$nitrit',
                     '$thorax','$kesan','$anjuran')";
 
-if ($conn->query($sql) === TRUE) {
-    // Close the database connection
-    $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        // Close the database connection
+        $conn->close();
 
-    // Redirect to anamnesa.html
-    header("Location: /mcu/calonkaryawan/hasil-calon-karyawan.php ");
+        // Redirect to anamnesa.html
+        header("Location: /mcu/calonkaryawan/hasil-calon-karyawan.php ");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} else {
+    // If the form data is not submitted through POST method, redirect to the form page
+    header("Location: your_form_page.php");
     exit();
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-} else {
-// If the form data is not submitted through POST method, redirect to the form page
-header("Location: your_form_page.php");
-exit();
-}
-?>

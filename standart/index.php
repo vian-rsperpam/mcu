@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +20,13 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border: none;
-      background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+      background-color: rgba(255, 255, 255, 0.8);
+      /* Slightly transparent */
     }
 
     .card-header {
-      background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+      background-color: rgba(255, 255, 255, 0.8);
+      /* Slightly transparent */
       color: #f58436;
       border-bottom: none;
       padding: 20px;
@@ -46,7 +49,8 @@
 
     .form-control {
       border-radius: 6px;
-      border: 1px solid rgba(206, 212, 218, 0.5); /* Semi-transparent border */
+      border: 1px solid rgba(206, 212, 218, 0.5);
+      /* Semi-transparent border */
       padding: 10px;
       font-size: 1rem;
     }
@@ -99,6 +103,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="card">
@@ -159,4 +164,5 @@
     });
   </script>
 </body>
+
 </html>

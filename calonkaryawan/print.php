@@ -138,6 +138,8 @@
             while ($row = $result->fetch_assoc()) {
               echo "<tr><td><strong>Nama :</strong></td><td>" . $row["nama"] . "</td></tr>";
               echo "<tr><td><strong>No RM :</strong></td><td>" . $row["rm"] . "</td></tr>";
+              echo "<tr><td><strong>Tanggal Lahir :</strong></td><td>" . $row["tgl_lahir"] . "</td></tr>";
+              echo "<tr><td><strong>Jenis Kelamin :</strong></td><td>" . $row["jenis_kelamin"] . "</td></tr>";
               echo "<tr><td><strong>Tanggal pemeriksaan :</strong></td><td>" . $row["tanggal"] . "</td></tr>";
               echo "<tr><td><strong>Penjamin :</strong></td><td>" . $row["penjamin"] . "</td></tr>";
               if (!empty($row["asuransi"])) {

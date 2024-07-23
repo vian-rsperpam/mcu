@@ -159,7 +159,7 @@ $conn->close();
                     'Custom'
                 ],
                 datasets: [{
-                    label: 'Jumlah Data Pasien MCU',
+                    label: 'Jumlah Pasien',
                     data: [
                         <?php echo $basicCount; ?>,
                         <?php echo $standartCount; ?>,

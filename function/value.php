@@ -43,9 +43,9 @@ function getHematokritStatus($hematokrit, $jenis_kelamin) {
 
 // Nilai normal trombosit
 function getTrombositStatus($trombosit) {
-    if($trombosit >= 150000 && $trombosit <= 440000){
+    if($trombosit >= 150 && $trombosit <= 440){
         return "Normal";
-    } elseif ($trombosit <150000){
+    } elseif ($trombosit <150){
         return "Low";
     } else {
         return "High";
@@ -55,9 +55,9 @@ function getTrombositStatus($trombosit) {
 
 // Nilai normal leukosit
 function getLeukositStatus($leukosit) {
-    if($leukosit >= 50000 && $leukosit <= 100000){
+    if($leukosit >= 50 && $leukosit <= 100){
         return "Normal";
-    } elseif ($leukosit <50000){
+    } elseif ($leukosit <50){
         return "Low";
     } else {
         return "High";
@@ -151,17 +151,17 @@ function getMonositStatus($monosit) {
 // Nilai normal eritrosit untuk Laki-Laki dan wanita
 function getEritrositStatus($eritrosit, $jenis_kelamin) {
     if ($jenis_kelamin == 'Laki-Laki') {
-        if ($eritrosit >= 4400000 && $eritrosit <= 5900000) {
+        if ($eritrosit >= 4.4 && $eritrosit <= 5.9) {
             return "Normal";
-        } elseif ($eritrosit < 4400000) {
+        } elseif ($eritrosit < 4.4) {
             return "Low";
         } else {
             return "High";
         }
     } else {
-        if ($eritrosit >= 3800000 && $eritrosit <= 5200000) {
+        if ($eritrosit >= 3.8 && $eritrosit <= 5.2) {
             return "Normal";
-        } elseif ($eritrosit< 3800000) {
+        } elseif ($eritrosit< 3.8) {
             return "Low";
         } else {
             return "High";
@@ -209,7 +209,7 @@ function getMCHCStatus($mchc) {
 function getRDWStatus($rdw) {
     if($rdw >= 1.5 && $rdw <= 14.5){
         return "Normal";
-    } elseif ($rdw <32){
+    } elseif ($rdw <1.5){
         return "Low";
     } else {
         return "High";

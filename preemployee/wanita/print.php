@@ -93,10 +93,15 @@
       /* margin-left: 400px; */
     }
 
+    .footer img {
+    width: 25%; /* Sesuaikan sesuai kebutuhan */
+    height: 25%; /* Sesuaikan sesuai kebutuhan */
+    }
+
     .footer2 {
       font-size: 16px;
       text-align: left;
-      margin-left: 40px;
+      margin-left: 100px;
       /* margin-left: 420px */
 
     }
@@ -388,8 +393,8 @@
   </div>
 
   <div class="footer">
-    <br><br>(dr Anisa Nor Chalifa)
-  </div>
+    <img src="/mcu/footer.png" alt="Signature Footer" />
+</div>
 
   <div class="footer2">
     Penanggung Jawab

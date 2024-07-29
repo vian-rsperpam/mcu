@@ -93,10 +93,15 @@
       /* margin-left: 400px; */
     }
 
+    .footer img {
+    width: 25%; /* Sesuaikan sesuai kebutuhan */
+    height: 25%; /* Sesuaikan sesuai kebutuhan */
+    }
+
     .footer2 {
       font-size: 16px;
       text-align: left;
-      margin-left: 40px;
+      margin-left: 100px;
       /* margin-left: 420px */
 
     }
@@ -336,7 +341,7 @@
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa Puasa :</strong></td><td>"  . $row["glucosa_puasa"] . " mg/dl <strong>" . $glucosapuasa_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 80 - 100 mg/dL)</small></td></tr>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Glucosa 2 Jam PP :</strong></td><td>"  . $row["glucosa_pp"] . " mg/dl <strong>" . $glucosapp_status . "</strong><br><br><br><br><br><small>(Nilai Normal Pria: 80 - 140 mg/dL)</small></td></tr>";
 
-            echo "<tr><td>&emsp;&emsp;<strong>c. Golongan Darah :</strong></td><td>";
+            echo "<tr><td>&emsp;&emsp;<strong>d. Golongan Darah :</strong></td><td>";
             echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Golongan Darah :</strong></td><td>"  . $row["gol_darah"] . " ";
 
             //thorax
@@ -369,8 +374,8 @@
   </div>
 
   <div class="footer">
-    <br><br>(dr Anisa Nor Chalifa)
-  </div>
+    <img src="/mcu/footer.png" alt="Signature Footer" />
+</div>
 
   <div class="footer2">
     Penanggung Jawab

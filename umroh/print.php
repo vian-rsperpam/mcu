@@ -234,8 +234,8 @@
 
             //Mata
             echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";
-            echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";
-            echo "<tr><td>&emsp;&emsp;<strong>Konjunctiva :</strong></td><td>"  . $row["konjunctiva"] . " cm</td></tr>";
+            echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . "</td></tr>";
+            echo "<tr><td>&emsp;&emsp;<strong>Konjunctiva :</strong></td><td>"  . $row["konjunctiva"] . " </td></tr>";
             echo "<tr><td>&emsp;&emsp;<strong>Sclera :</strong></td><td>"  . $row["sclera"] . " </td></tr>";
             echo "<tr><td>&emsp;&emsp;<strong>Palpebra :</strong></td><td>"  . $row["palpebra"] . " </td></tr>";
             echo "<tr><td>&emsp;&emsp;<strong>Refleks Cahaya :</strong></td><td>"  . $row["refleks_cahaya"] . " </td></tr>";
@@ -248,7 +248,7 @@
                <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;OS:</td>
                      <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["os"]) . "</td>
                    </tr>";
-            echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
+            echo "<tr><td>&emsp;&emsp;;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
 
             //Mulut
             echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MULUT</strong></td></tr>";

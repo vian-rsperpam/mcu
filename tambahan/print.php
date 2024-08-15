@@ -277,10 +277,10 @@
               echo "<tr><td colspan='2'><strong style='font-size: 16px;'>MATA</strong></td></tr>";
             }
             if (!empty($row["butawarna"])) {
-              echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . " Kg</td></tr>";
+              echo "<tr><td>&emsp;&emsp;<strong>Buta Warna :</strong></td><td>"  . $row["butawarna"] . "</td></tr>";
             }
             if (!empty($row["konjunctiva"])) {
-              echo "<tr><td>&emsp;&emsp;<strong>Konjunctiva :</strong></td><td>"  . $row["konjunctiva"] . " cm</td></tr>";
+              echo "<tr><td>&emsp;&emsp;<strong>Konjunctiva :</strong></td><td>"  . $row["konjunctiva"] . " </td></tr>";
             }
             if (!empty($row["sclera"])) {
               echo "<tr><td>&emsp;&emsp;<strong>Sclera :</strong></td><td>"  . $row["sclera"] . " </td></tr>";
@@ -307,7 +307,7 @@
                    </tr>";
             }
             if (!empty($row["catatan"])) {
-              echo "<tr><td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
+              echo "<tr><td>&emsp;&emsp;;<strong>Catatan :</strong></td><td>"  . $row["catatan"] . "</td></tr>";
             }
 
             //Mulut
@@ -381,10 +381,13 @@
                 echo "<tr><td colspan='2'><strong style='font-size: 16px;'>ABDOMEN</strong></td></tr>";
               }
               if (!empty($row["perkusi_jantung"])) {
-                echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["perkusi_jantung"] . "</td></tr>";
+                echo "<tr><td>&emsp;&emsp;<strong>Inspeksi :</strong></td><td>"  . $row["inspeksi_abdomen"] . "</td></tr>";
               }
               if (!empty($row["auskultasi_jantung"])) {
-                echo "<tr><td>&emsp;&emsp;<strong>Palpalsi :</strong></td><td>"  . $row["auskultasi_jantung"] . "</td></tr>";
+                           echo "<tr>
+               <td style='font-size: 12px; font-weight: bold;'>&emsp;&emsp;Palpalsi:</td>
+                     <td style='font-size: 12px; font-family: Arial, sans-serif; line-height: 1; padding: 1; border: 1; margin: 0; white-space: pre-wrap;'>" . nl2br($row["palpalsi_abdomen"]) . "</td>
+                   </tr>";
               }
               if (!empty($row["auskultasi_abdomen"])) {
                 echo "<tr>

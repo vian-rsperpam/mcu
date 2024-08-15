@@ -55,7 +55,7 @@ function getTrombositStatus($trombosit) {
 
 // Nilai normal leukosit
 function getLeukositStatus($leukosit) {
-    if($leukosit >= 50 && $leukosit <= 100){
+    if($leukosit >= 5 && $leukosit <= 10){
         return "Normal";
     } elseif ($leukosit <50){
         return "Low";
@@ -402,27 +402,18 @@ function getPHStatus($ph) {
 //protein
 function getProteinStatus($protein) {
     if($protein == "Negatif" || $protein == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
     
 }
 
-//Glucosaurin
-function getGlukosaurinStatus($glukosaurin) {
-    if($glukosaurin == "Negatif" || $glukosaurin == "negatif"){
-        return "";
-    } else {
-        return "ALERT!";
-    }
-    
-}
 
 //Bilirubin
 function getBilirubinStatus($bilirubin) {
     if($bilirubin == "Negatif" || $bilirubin == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -432,7 +423,7 @@ function getBilirubinStatus($bilirubin) {
 //keton
 function getKetonStatus($keton) {
     if($keton == "Negatif" || $keton == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -442,7 +433,7 @@ function getKetonStatus($keton) {
 //Urobilinogen
 function getUrobilinogenStatus($urobilinogen) {
     if($urobilinogen <= 0.1){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -452,7 +443,7 @@ function getUrobilinogenStatus($urobilinogen) {
 //darahurin
 function getDarahurinStatus($darahurin) {
     if($darahurin == "Negatif" || $darahurin == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -465,7 +456,7 @@ function getDarahurinStatus($darahurin) {
 //glukosa urin
 function getglucosaurinStatus($glucosaurin) {
     if($glucosaurin == "Negatif" || $glucosaurin == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -475,7 +466,7 @@ function getglucosaurinStatus($glucosaurin) {
 //nitrit
 function getNitritStatus($nitrit) {
     if($nitrit == "Negatif" || $nitrit == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -509,7 +500,7 @@ function getEritrositsedimenStatus($eritrositsedimen) {
 //Leukositurin
 function getLeukositurinStatus($leukositurin) {
     if($leukositurin == "Negatif" || $leukositurin == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }
@@ -517,7 +508,7 @@ function getLeukositurinStatus($leukositurin) {
 }
 function getLeukositsedimenStatus($leukositsedimen) {
     if($leukositsedimen == "Negatif" || $leukositsedimen == "negatif"){
-        return "";
+        return "Normal";
     } else {
         return "ALERT!";
     }

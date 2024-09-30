@@ -130,10 +130,6 @@
             <?php include 'form/costovertebra.html'; ?>
           </div>
           <div class="form-section">
-            <h5>Laboratorium</h5>
-            <?php include 'form/laboratorium.html'; ?>
-          </div>
-          <div class="form-section">
             <?php include 'form/rka.html'; ?>
           </div>
           <div class="d-flex justify-content-between">

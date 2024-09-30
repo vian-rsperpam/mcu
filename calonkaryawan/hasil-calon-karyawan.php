@@ -103,8 +103,15 @@
             echo "<td>" . $row["rm"] . "</td>";
             echo "<td>" . $row["tanggal"] . "</td>";
             echo "<td>" . $row["paket"] . "</td>";
-            echo "<td><button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button></td>";
-            echo "</tr>";
+            echo "<td>";
+            echo "<button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button> ";
+            if (!empty($row["hemoglobin"])) {
+              echo "<button class='btn btn-secondary' disabled>Hasil Lab Sudah Diinput</button>";
+          } else {
+              echo "<a href='lab.php?rm=" . $row["rm"] . "' class='btn btn-warning ml-2'>Input Hasil Lab</a>";
+          }
+          
+          echo "</td>";
           }
         } else {
           echo "<tr><td colspan='5'>Tidak ada data ditemukan.</td></tr>";

@@ -125,14 +125,10 @@
             <h5>Pemeriksaan Fisik</h5>
             <?php include 'form/pemeriksaan-fisik.html'; ?>
           </div>
-          <div class="form-section">
+          < class="form-section">
             <h5>Costovertebra</h5>
             <?php include 'form/costovertebra.html'; ?>
-          </div>
-          <div class="form-section">
-            <h5>Laboratorium</h5>
-            <?php include 'form/laboratorium.html'; ?>
-          </div>
+           </div>
           <div class="form-section">
             <?php include 'form/rka.html'; ?>
           </div>

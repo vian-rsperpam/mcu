@@ -1,10 +1,30 @@
+<?php
+
+include('koneksi.php');
+
+// Get the RM (Medical Record Number) from the URL parameter
+$rm = isset($_GET['rm']) ? $_GET['rm'] : '';
+
+// Fetch patient data based on RM
+$sql = "SELECT * FROM kartap WHERE rm='$rm'";
+$result = $conn->query($sql);
+$patient = $result->fetch_assoc();
+
+// Check if patient data exists
+if ($patient) {
+    $patient_name = $patient['nama']; // Assuming 'nama' is the column for the patient's name
+} else {
+    $patient_name = 'Tidak ditemukan';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCU Hidup Sehat</title>
+  <title>MCU Standar</title>
   <!-- Add Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
@@ -21,12 +41,10 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border: none;
       background-color: rgba(255, 255, 255, 0.8);
-      /* Slightly transparent */
     }
 
     .card-header {
       background-color: rgba(255, 255, 255, 0.8);
-      /* Slightly transparent */
       color: #f58436;
       border-bottom: none;
       padding: 20px;
@@ -50,7 +68,6 @@
     .form-control {
       border-radius: 6px;
       border: 1px solid rgba(206, 212, 218, 0.5);
-      /* Semi-transparent border */
       padding: 10px;
       font-size: 1rem;
     }
@@ -109,22 +126,19 @@
     <div class="card">
       <div class="card-header">
         <img src="../logo.png" alt="Logo">
-        MCU Hidup Sehat
+        Input Hasil Lab
       </div>
       <div class="card-body">
-        <form class="form-horizontal" method="post" action="simpan-data.php" id="mainForm">
+        <form class="form-horizontal" method="post" action="simpan-lab.php" id="mainForm">
+        <input type="hidden" name="rm" value="<?php echo $rm; ?>">
           <div class="form-section">
-            <h5>Identitas</h5>
-            <?php include 'form/identitas.html'; ?>
+            <!-- Display RM and Patient Name -->
+            <h5><?php echo $patient_name; ?> <?php echo $rm; ?></h5>
+
+            <!-- Include the lab form -->
+            <?php include 'form/laboratorium.html'; ?>
           </div>
-          <div class="form-section">
-            <h5>Anamnesa</h5>
-            <?php include 'form/anamnesa.html'; ?>
-          </div>
-          <div class="form-section">
-            <h5>Pemeriksaan Fisik</h5>
-            <?php include 'form/pemeriksaan-fisik.html'; ?>
-          </div>
+
           <div class="d-flex justify-content-between">
             <button id="submitBtn" class="btn btn-primary btn-lg btn-block mr-2" type="submit" name="action" value="print">Simpan</button>
             <a id="cancelBtn" href="../index.php" class="btn btn-secondary btn-lg">Batal</a>

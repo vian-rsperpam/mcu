@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Pasien</title>
+  <title>Hasil Medical Check UP </title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -14,8 +14,7 @@
 <body>
 
   <div class="container mt-5">
-    <h2>Hasil Medical Check UP Basic</h2>
-
+    <h2>Hasil Medical Check Up Basic</h2>
     <div class="mb-3">
       <div class="btn-group">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,74 +44,79 @@
 
     <!-- Form untuk pencarian -->
     <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="mb-3">
-      <div class="form-row align-items-end">
-        <div class="col-md-3 mb-2">
+      <div class="form-row">
+        <div class="col-md-4 mb-2">
           <input type="text" name="search_nama" class="form-control" placeholder="Cari berdasarkan nama">
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
           <input type="text" name="search_rm" class="form-control" placeholder="Cari berdasarkan RM">
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
           <input type="date" name="search_tanggal" class="form-control" placeholder="Cari berdasarkan tanggal">
         </div>
-        <div class="col-md-3 mb-2">
+        <div class="col-md-4 mb-2">
           <button type="submit" class="btn btn-primary">Cari</button>
         </div>
       </div>
-    </form>
 
+      <!-- Tabel data pasien -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>RM</th>
+            <th>Tanggal Pemeriksaan</th>
+            <th>Paket</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          // Include the database connection file
+          include('koneksi.php');
 
-    <!-- Tabel data pasien -->
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>RM</th>
-          <th>Tanggal Pemeriksaan</th>
-          <th>Paket</th>
-          <th> </th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        // Include the database connection file
-        include('koneksi.php');
+          // Query pencarian
+          $search_nama = isset($_GET['search_nama']) ? $_GET['search_nama'] : '';
+          $search_rm = isset($_GET['search_rm']) ? $_GET['search_rm'] : '';
+          $search_tanggal = isset($_GET['search_tanggal']) ? $_GET['search_tanggal'] : '';
 
-        // Query pencarian
-        $search_nama = isset($_GET['search_nama']) ? $_GET['search_nama'] : '';
-        $search_rm = isset($_GET['search_rm']) ? $_GET['search_rm'] : '';
-        $search_tanggal = isset($_GET['search_tanggal']) ? $_GET['search_tanggal'] : '';
+          $sql = "SELECT * FROM basic WHERE nama LIKE '%$search_nama%' AND rm LIKE '%$search_rm%'";
 
-        $sql = "SELECT * FROM basic WHERE nama LIKE '%$search_nama%' AND rm LIKE '%$search_rm%'";
-
-        // Jika ada tanggal yang dimasukkan, tambahkan kondisi pencarian berdasarkan tanggal ke kueri SQL
-        if (!empty($search_tanggal)) {
-          $sql .= " AND tanggal = '$search_tanggal'";
-        }
-
-        // Tambahkan ORDER BY untuk mengurutkan berdasarkan tanggal terbaru
-        $sql .= " ORDER BY tanggal DESC";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-          // Output data of each row
-          while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["nama"] . "</td>";
-            echo "<td>" . $row["rm"] . "</td>";
-            echo "<td>" . $row["tanggal"] . "</td>";
-            echo "<td>" . $row["paket"] . "</td>";
-            echo "<td><button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button></td>";
-            echo "</tr>";
+          // Jika ada tanggal yang dimasukkan, tambahkan kondisi pencarian berdasarkan tanggal ke kueri SQL
+          if (!empty($search_tanggal)) {
+            $sql .= " AND tanggal = '$search_tanggal'";
           }
-        } else {
-          echo "<tr><td colspan='5'>Tidak ada data ditemukan.</td></tr>";
-        }
-        $conn->close();
-        ?>
-      </tbody>
-    </table>
+
+          // Tambahkan ORDER BY untuk mengurutkan berdasarkan tanggal terbaru
+          $sql .= " ORDER BY tanggal DESC";
+
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+              echo "<tr>";
+              echo "<td>" . $row["nama"] . "</td>";
+              echo "<td>" . $row["rm"] . "</td>";
+              echo "<td>" . $row["tanggal"] . "</td>";
+              echo "<td>" . $row["paket"] . "</td>";
+              echo "<td>";
+              echo "<button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button> ";
+              if (!empty($row["hemoglobin"])) {
+                echo "<button class='btn btn-secondary' disabled>Hasil Lab Sudah Diinput</button>";
+            } else {
+                echo "<a href='lab.php?rm=" . $row["rm"] . "' class='btn btn-warning ml-2'>Input Hasil Lab</a>";
+            }
+            
+            echo "</td>";
+            }
+          } else {
+            echo "<tr><td colspan='5'>Tidak ada data ditemukan.</td></tr>";
+          }
+          $conn->close();
+          ?>
+        </tbody>
+      </table>
   </div>
 
   <script>

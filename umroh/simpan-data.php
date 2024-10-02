@@ -60,27 +60,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tympani = $_POST['tympani'];
     $prope = $_POST['prope'];
     $infeksi = $_POST['infeksi'];
-    $hemoglobin = $_POST["hemoglobin"];
-    $hematokrit = $_POST["hematokrit"];
-    $trombosit = $_POST["trombosit"];
-    $leukosit = $_POST["leukosit"];
-    $led = $_POST["led"];
-    $eritrosit = $_POST["eritrosit"];
-    $basofil = $_POST["basofil"];
-    $eosinofil = $_POST["eosinofil"];
-    $neutrofil = $_POST["neutrofil"];
-    $limfosit = $_POST["limfosit"];
-    $monosit = $_POST["monosit"];
-    $eritrosit = $_POST["eritrosit"];
-    $mcv = $_POST["MCV"];
-    $mch = $_POST["MCH"];
-    $kolesterol = $_POST['kolesterol'];
-    $hdl = $_POST['hdl'];
-    $ldl = $_POST['ldl'];
-    $trigliserida = $_POST['tg'];
-    $glukosa_puasa = $_POST['glukosa-puasa'];
-    $glukosa_pp = $_POST['glukosa-pp'];
-    $gol_darah = $_POST['gol-darah'];
+    // $hemoglobin = $_POST["hemoglobin"];
+    // $hematokrit = $_POST["hematokrit"];
+    // $trombosit = $_POST["trombosit"];
+    // $leukosit = $_POST["leukosit"];
+    // $led = $_POST["led"];
+    // $eritrosit = $_POST["eritrosit"];
+    // $basofil = $_POST["basofil"];
+    // $eosinofil = $_POST["eosinofil"];
+    // $neutrofil = $_POST["neutrofil"];
+    // $limfosit = $_POST["limfosit"];
+    // $monosit = $_POST["monosit"];
+    // $eritrosit = $_POST["eritrosit"];
+    // $mcv = $_POST["MCV"];
+    // $mch = $_POST["MCH"];
+    // $kolesterol = $_POST['kolesterol'];
+    // $hdl = $_POST['hdl'];
+    // $ldl = $_POST['ldl'];
+    // $trigliserida = $_POST['tg'];
+    // $glukosa_puasa = $_POST['glukosa-puasa'];
+    // $glukosa_pp = $_POST['glukosa-pp'];
+    // $gol_darah = $_POST['gol-darah'];
     $thorax = nl2br($_POST['thorax']);
     $kesan = nl2br($_POST['kesan']);
     $anjuran = nl2br($_POST['anjuran']);
@@ -90,15 +90,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
                                 berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
-                                hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, mcv, mch, basofil, eosinofil, neutrofil, limfosit, monosit, kolesterol, hdl, ldl, trigliserida, 
-                                glukosa_puasa, glukosa_pp, gol_darah,
+                                -- hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, mcv, mch, basofil, eosinofil, neutrofil, limfosit, monosit, kolesterol, hdl, ldl, trigliserida, 
+                                -- glukosa_puasa, glukosa_pp, gol_darah,
                                 thorax, kesan, anjuran)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
                     '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
                     '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$mcv', '$mch', '$basofil', '$eosinofil', '$neutrofil', '$limfosit', '$monosit', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
-                    '$glukosa_puasa', '$glukosa_pp', '$gol_darah',
+                    -- '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$mcv', '$mch', '$basofil', '$eosinofil', '$neutrofil', '$limfosit', '$monosit', '$kolesterol', '$hdl', '$ldl', '$trigliserida', 
+                    -- '$glukosa_puasa', '$glukosa_pp', '$gol_darah',
                     '$thorax','$kesan','$anjuran')";
 
     if ($conn->query($sql) === TRUE) {

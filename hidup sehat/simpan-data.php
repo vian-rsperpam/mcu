@@ -33,46 +33,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $respirasi = $_POST['respirasi'];
     $suhu = $_POST['suhu'];
     $hasil_konsul = nl2br($_POST['hasil-konsul']);
-    $hemoglobin = $_POST['hemoglobin'];
-    $hematokrit = $_POST['hematokrit'];
-    $trombosit = $_POST['trombosit'];
-    $leukosit = $_POST['leukosit'];
-    $led = $_POST['led'];
-    $eritrosit = $_POST['eritrosit'];
-    $basofil = $_POST["basofil"];
-    $eosinofil = $_POST["eosinofil"];
-    $neutrofil = $_POST["neutrofil"];
-    $limfosit = $_POST["limfosit"];
-    $monosit = $_POST["monosit"];
-    $mcv = $_POST['MCV'];
-    $mch = $_POST['MCH'];
-    $gds = $_POST['gds'];
-    $kolesterol = $_POST['kolesterol'];
-    $hdl = $_POST['hdl'];
-    $ldl = $_POST['ldl'];
-    $tg = $_POST['tg'];
-    $glukosa_puasa = $_POST['glukosa-puasa'];
-    $hba1c = $_POST['hba1c'];
-    $asam_urat = $_POST['asam-urat'];
-    $ureum = $_POST['ureum'];
-    $creatin = $_POST['creatin'];
-    $sgot = $_POST['sgot'];
-    $sgpt = $_POST['sgpt'];
+    // $hemoglobin = $_POST['hemoglobin'];
+    // $hematokrit = $_POST['hematokrit'];
+    // $trombosit = $_POST['trombosit'];
+    // $leukosit = $_POST['leukosit'];
+    // $led = $_POST['led'];
+    // $eritrosit = $_POST['eritrosit'];
+    // $basofil = $_POST["basofil"];
+    // $eosinofil = $_POST["eosinofil"];
+    // $neutrofil = $_POST["neutrofil"];
+    // $limfosit = $_POST["limfosit"];
+    // $monosit = $_POST["monosit"];
+    // $mcv = $_POST['MCV'];
+    // $mch = $_POST['MCH'];
+    // $gds = $_POST['gds'];
+    // $kolesterol = $_POST['kolesterol'];
+    // $hdl = $_POST['hdl'];
+    // $ldl = $_POST['ldl'];
+    // $tg = $_POST['tg'];
+    // $glukosa_puasa = $_POST['glukosa-puasa'];
+    // $hba1c = $_POST['hba1c'];
+    // $asam_urat = $_POST['asam-urat'];
+    // $ureum = $_POST['ureum'];
+    // $creatin = $_POST['creatin'];
+    // $sgot = $_POST['sgot'];
+    // $sgpt = $_POST['sgpt'];
 
 
 
     $sql = "INSERT INTO hidup_sehat     (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                         keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
-                                        berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, hasil_konsul, hemoglobin, hematokrit, trombosit, leukosit, led, 
-                                        eritrosit, hitung_jenis, mcv, mch, gds, 
-                                        kolesterol, hdl, ldl, tg, glukosa_puasa, hba1c, 
-                                        asam_urat, ureum, creatin, sgot, sgpt)
+                                        berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, hasil_konsul)
+                                        -- hemoglobin, hematokrit, trombosit, leukosit, led, 
+                                        -- eritrosit, hitung_jenis, mcv, mch, gds, 
+                                        -- kolesterol, hdl, ldl, tg, glukosa_puasa, hba1c, 
+                                        -- asam_urat, ureum, creatin, sgot, sgpt)
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
                     '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga','$alergi',
-                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu','$hasil_konsul', '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', 
-                    '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', 
-                    '$kolesterol', '$hdl', '$ldl', '$tg', '$glukosa_puasa', '$hba1c', 
-                    '$asam_urat', '$ureum', '$creatin', '$sgot', '$sgpt')";
+                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu','$hasil_konsul')
+                    -- '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', 
+                    -- '$eritrosit', '$hitung_jenis', '$mcv', '$mch', '$gds', 
+                    -- '$kolesterol', '$hdl', '$ldl', '$tg', '$glukosa_puasa', '$hba1c', 
+                    -- '$asam_urat', '$ureum', '$creatin', '$sgot', '$sgpt')";
 
     if ($conn->query($sql) === TRUE) {
         // Close the database connection

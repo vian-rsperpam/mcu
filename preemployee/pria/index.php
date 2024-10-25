@@ -129,9 +129,6 @@
             <h5>Costovertebra</h5>
             <?php include 'form/costovertebra.html'; ?>
           </div>
-          <div class="form-section">
-            <?php include 'form/rka.html'; ?>
-          </div>
           <div class="d-flex justify-content-between">
             <button id="submitBtn" class="btn btn-primary btn-lg btn-block mr-2" type="submit" name="action" value="print">Simpan</button>
             <a id="cancelBtn" href="../index.php" class="btn btn-secondary btn-lg">Batal</a>

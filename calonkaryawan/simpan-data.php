@@ -86,25 +86,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $darahurin = $_POST['darahurin'];
     // $leukositurin = $_POST['leukositurin'];
     // $nitrit = $_POST['nitrit'];
-    $thorax = nl2br($_POST['thorax']);
-    $kesan = nl2br($_POST['kesan']);
-    $anjuran = nl2br($_POST['anjuran']);
+    // $thorax = nl2br($_POST['thorax']);
+    // $kesan = nl2br($_POST['kesan']);
+    // $anjuran = nl2br($_POST['anjuran']);
 
 
     $sql = "INSERT INTO calonkaryawan   (nama, rm, tgl_lahir, jenis_kelamin, tanggal, penjamin, asuransi, paket, usia_tahun, usia_bulan,
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, j_olahraga, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
-                                berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
+                                berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi)
                                 -- hemoglobin, hematokrit, trombosit, leukosit, led, eritrosit, mcv, mch, basofil, eosinofil, neutrofil, limfosit, monosit,gds,
                                 -- warna, kejernihan, beratjenis, ph, proteinurin, glucosaurin, keton, bilirubin, urobilinogen, darahurin, leukositurin, nitrit,
-                                thorax, kesan, anjuran)
+                                
             VALUES ('$nama', '$rm', '$tgl_lahir', '$jenis_kelamin', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia_tahun', '$usia_bulan',
                     '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$jenis_olahraga', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
-                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    -- '$hemoglobin', '$hematokrit', '$trombosit', '$leukosit', '$led', '$eritrosit', '$mcv', '$mch', '$basofil', '$eosinofil', '$neutrofil', '$limfosit', '$monosit','$gds',
-                    -- '$warna', '$kejernihan', '$beratjenis', '$ph', '$protein', '$glucosaurin', '$keton', '$bilirubin', '$urobilinogen', '$darahurin', '$leukositurin', '$nitrit',
-                    '$thorax','$kesan','$anjuran')";
+                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi')";
 
     if ($conn->query($sql) === TRUE) {
         // Close the database connection

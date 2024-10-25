@@ -58,21 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prope = $_POST['prope'];
     $infeksi = $_POST['infeksi'];
     // $hbsag = $_POST['$hbsag'];
-    $thorax = nl2br($_POST['thorax']);
-    $kesan = nl2br($_POST['kesan']);
-    $anjuran = nl2br($_POST['anjuran']);
+    // $thorax = nl2br($_POST['thorax']);
+    // $kesan = nl2br($_POST['kesan']);
+    // $anjuran = nl2br($_POST['anjuran']);
 
 
     $sql = "INSERT INTO kartap   (nama, rm, tanggal, penjamin, asuransi, paket, usia,
                                 keluhan, riwayatdahulu, riwayatkeluarga, merokok, alkohol, obat, olahraga, riwayatalergi, alergi,
                                 perkusi_jantung, auskultasi_jantung, perkusi_pulmo, auskultasi_pulmo, inspeksi_abdomen, palpalsi_abdomen, auskultasi_abdomen, ginjal, ekstremitas_atas, ekstremitas_bawah, tumor, kelainan_kulit,
-                                berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi,
-                                thorax, kesan, anjuran)
+                                berat_badan, tinggi_badan, bmi, bmi_status, tensi, nadi, respirasi, suhu, butawarna, konjunctiva, sclera, palpebra, refleks_cahaya, od, os, catatan, faring, tonsil, gigi, kgb, tyroid, tympani, prope, infeksi)
             VALUES ('$nama', '$rm', '$tanggal', '$penjamin', '$asuransi', '$paket', '$usia',
                     '$keluhan', '$riwayatdahulu', '$riwayatkeluarga', '$merokok', '$alkohol', '$obat', '$olahraga', '$riwayatalergi', '$alergi',
                     '$perkusi_jantung', '$auskultasi_jantung', '$perkusi_pulmo', '$auskultasi_pulmo', '$inspeksi_abdomen', '$palpalsi_abdomen', '$auskultasi_abdomen', '$ginjal', '$ekstremitas_atas', '$ekstremitas_bawah', '$tumor', '$kelainan_kulit',
-                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi',
-                    '$thorax','$kesan','$anjuran')";
+                    '$berat_badan', '$tinggi_badan', '$bmi', '$bmi_status', '$tensi', '$nadi', '$respirasi', '$suhu', '$butawarna', '$konjunctiva', '$sclera', '$palpebra', '$refleks_cahaya', '$od', '$os', '$catatan', '$faring', '$tonsil', '$gigi', '$kgb', '$tyroid', '$tympani', '$prope', '$infeksi')";
 
     if ($conn->query($sql) === TRUE) {
         // Close the database connection

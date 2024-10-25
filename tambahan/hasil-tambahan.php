@@ -104,14 +104,19 @@
             echo "<td>" . $row["tanggal"] . "</td>";
             echo "<td>" . $row["paket"] . "</td>";
             echo "<td>";
-            echo "<button class='btn btn-primary' onclick='printData(\"" . $row["rm"] . "\")'>View</button> ";
             if (!empty($row["hemoglobin"])) {
-              echo "<button class='btn btn-secondary' disabled>Hasil Lab Sudah Diinput</button>";
+              echo "<button class='btn btn-secondary mr-2 mb-2' disabled title='Hasil Lab sudah ada'>Hasil Lab</button>";
           } else {
-              echo "<a href='lab.php?rm=" . $row["rm"] . "' class='btn btn-warning ml-2'>Input Hasil Lab</a>";
+              echo "<a href='lab.php?rm=" . $row["rm"] . "' class='btn btn-warning mr-2 mb-2'>Lab</a>";
           }
+          if (!empty($row["thorax"])) {
+              echo "<button class='btn btn-secondary mr-2 mb-2' disabled title='Rontgen dan Kesimpulan sudah ada'>Rontgen dan Kesimpulan</button>";
+          } else {
+              echo "<a href='rka.php?rm=" . $row["rm"] . "' class='btn btn-warning mr-2 mb-2'>Rontgen dan Kesimpulan</a>";
+          }
+          echo "<button class='btn btn-primary mr-2 mb-2' onclick='printData(\"" . $row["rm"] . "\")'>View</button>";
           
-          echo "</td>";
+          
           }
         } else {
           echo "<tr><td colspan='5'>Tidak ada data ditemukan.</td></tr>";

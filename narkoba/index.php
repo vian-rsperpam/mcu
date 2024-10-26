@@ -151,7 +151,22 @@
         window.location.href = this.href;
       }
     });
-  </script>
+  // </script>
+  // script>
+  //   document.getElementById('submitBtn').addEventListener('click', function(event) {
+  //     event.preventDefault();
+  //     if (confirm('Apakah Anda yakin ingin menyimpan data?')) {
+  //       document.getElementById('mainForm').submit();
+  //     }
+  //   });
+
+  //   document.getElementById('cancelBtn').addEventListener('click', function(event) {
+  //     event.preventDefault();
+  //     if (confirm('Apakah Anda yakin ingin membatalkan?')) {
+  //       window.location.href = this.href;
+  //     }
+  //   });
+  // </script>
 </body>
 
 </html>
